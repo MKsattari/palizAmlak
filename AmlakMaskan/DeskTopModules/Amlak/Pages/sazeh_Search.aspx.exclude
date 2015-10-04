@@ -1,0 +1,190 @@
+﻿
+
+<%@ Page Language="C#" CodeFile="sazeh_Search.aspx.cs" AutoEventWireup="false" Inherits="sazeh_Search" Trace="False" %>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<html xmlns:asp="urn:microsoft:aspx">
+<head><title><%=PageTitle%></title>
+    <link href="Default.css" type="text/css" rel="stylesheet" />
+    <meta content="Microsoft Visual Studio 7.0" name="GENERATOR" />
+    <meta content="C#" name="CODE_LANGUAGE" />
+    <meta content="JavaScript" name="vs_defaultClientScript" />
+    <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+</head>
+<body>
+    
+    <form method="get">
+        <uc1:Header id="Header1" runat="server"></uc1:Header><p>
+            <asp:label id="lblMessage" cssclass="DataEntryFormMessage" runat="server"></asp:label>
+        </p>
+        <br />
+        <table class="SearchForm" cellspacing="0" cellpadding="2" border="0">
+            <tr class="SearchTitle">
+                <td>&nbsp;</td>
+                <td colspan="4" nowrap="nowrap">Search Sazeh</td>
+            </tr>
+            <tr class="Criteria">
+                <td>&nbsp;</td>
+                <td>Szh Id is
+                </td>
+                <td>
+                    <input size="30" name="szh_id" id="szh_id" runat="server" /></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="Criteria">
+                <td>&nbsp;</td>
+                <td>Rsht Id is
+                </td>
+                <td>
+                    <input size="30" name="rsht_id" id="rsht_id" runat="server" /></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="Criteria">
+                <td>&nbsp;</td>
+                <td>Modirt Id is
+                </td>
+                <td>
+                    <input size="30" name="modirt_id" id="modirt_id" runat="server" /></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="Criteria">
+                <td>&nbsp;</td>
+                <td>Shrstan Id is
+                </td>
+                <td>
+                    <input size="30" name="shrstan_id" id="shrstan_id" runat="server" /></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="Criteria">
+                <td>&nbsp;</td>
+                <td>Shobh Id is
+                </td>
+                <td>
+                    <input size="30" name="shobh_id" id="shobh_id" runat="server" /></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="Criteria">
+                <td>&nbsp;</td>
+                <td>Fndsion Noe Id is
+                </td>
+                <td>
+                    <input size="30" name="fndsion_noe_id" id="fndsion_noe_id" runat="server" /></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="Criteria">
+                <td>&nbsp;</td>
+                <td>Fndsion Tozi contains
+                </td>
+                <td>
+                    <input size="30" name="fndsion_tozi" id="fndsion_tozi" runat="server" /></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="Criteria">
+                <td>&nbsp;</td>
+                <td>Sgf Noe Id is
+                </td>
+                <td>
+                    <input size="30" name="sgf_noe_id" id="sgf_noe_id" runat="server" /></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="Criteria">
+                <td>&nbsp;</td>
+                <td>Sgf Sayr contains
+                </td>
+                <td>
+                    <input size="30" name="sgf_sayr" id="sgf_sayr" runat="server" /></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="Criteria">
+                <td>&nbsp;</td>
+                <td>Sgf Tozi contains
+                </td>
+                <td>
+                    <input size="30" name="sgf_tozi" id="sgf_tozi" runat="server" /></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="Criteria">
+                <td>&nbsp;</td>
+                <td>Sklt Noe Id is
+                </td>
+                <td>
+                    <input size="30" name="sklt_noe_id" id="sklt_noe_id" runat="server" /></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="Criteria">
+                <td>&nbsp;</td>
+                <td>Sklt Tozi contains
+                </td>
+                <td>
+                    <input size="30" name="sklt_tozi" id="sklt_tozi" runat="server" /></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="Criteria">
+                <td>&nbsp;</td>
+                <td>Sklt Sayr contains
+                </td>
+                <td>
+                    <input size="30" name="sklt_sayr" id="sklt_sayr" runat="server" /></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="Criteria">
+                <td>&nbsp;</td>
+                <td>Divar Karji Glb Id is
+                </td>
+                <td>
+                    <input size="30" name="divar_karji_glb_id" id="divar_karji_glb_id" runat="server" /></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="Criteria">
+                <td>&nbsp;</td>
+                <td>Divar Dakli Glb Id is
+                </td>
+                <td>
+                    <input size="30" name="divar_dakli_glb_id" id="divar_dakli_glb_id" runat="server" /></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="Criteria">
+                <td>&nbsp;</td>
+                <td>Divar Dakli Glb Tozi between
+                </td>
+                <td>
+                    <input size="12" name="divar_dakli_glb_toziBegin" id="divar_dakli_glb_toziBegin" runat="server" />
+                    and
+								<input size="12" name="divar_dakli_glb_toziEnd" id="divar_dakli_glb_toziEnd" runat="server" /></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="Criteria">
+                <td>&nbsp;</td>
+                <td>Thvil Tarikh contains
+                </td>
+                <td>
+                    <input size="30" name="thvil_tarikh" id="thvil_tarikh" runat="server" /></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="Criteria">
+                <td>&nbsp;</td>
+                <td>Thvil Krshnas between
+                </td>
+                <td>
+                    <input size="12" name="thvil_krshnasBegin" id="thvil_krshnasBegin" runat="server" />
+                    and
+								<input size="12" name="thvil_krshnasEnd" id="thvil_krshnasEnd" runat="server" /></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="SearchFooter">
+                <td>&nbsp;</td>
+                <td></td>
+                <td>
+                    <input type="submit" class="Button" value="Search" name="Action" /></td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    </form>
+    <br />
+    <form id="Form1" method="post" enctype="application/x-www-form-urlencoded" runat="server">
+        <asp:datagrid id="sazehGrid" runat="server" gridlines="None" cssclass="DataGrid" allowsorting="True" pagesize="20" autogeneratecolumns="False" allowpaging="True" datakeyfield="szh_id" cellpadding="2" cellspacing="1" datasource="&lt;%# m_sazehDataSet %&gt;" datamember="sazeh"><SelectedItemStyle verticalalign="Top" cssclass="DataGridItemSelected" /><EditItemStyle verticalalign="Top" cssclass="DataGridItemEdit" /><AlternatingItemStyle verticalalign="Top" cssclass="DataGridItemAlt" /><ItemStyle verticalalign="Top" cssclass="DataGridItem" /><HeaderStyle cssclass="DataGridHeader" /><FooterStyle cssclass="DataGridFooter" /><Columns><asp:ButtonColumn Text="Edit" ButtonType="PushButton" HeaderText="" CommandName="Edit" /><asp:BoundColumn DataField="szh_id" SortExpression="szh_id" HeaderText="Szh Id"><HeaderStyle wrap="False" /><ItemStyle horizontalalign="Right"></ItemStyle></asp:BoundColumn><asp:BoundColumn DataField="rsht_id" SortExpression="rsht_id" HeaderText="Rsht Id"><HeaderStyle wrap="False" /><ItemStyle horizontalalign="Right"></ItemStyle></asp:BoundColumn><asp:BoundColumn DataField="modirt_id" SortExpression="modirt_id" HeaderText="Modirt Id"><HeaderStyle wrap="False" /><ItemStyle horizontalalign="Right"></ItemStyle></asp:BoundColumn><asp:BoundColumn DataField="shrstan_id" SortExpression="shrstan_id" HeaderText="Shrstan Id"><HeaderStyle wrap="False" /><ItemStyle horizontalalign="Right"></ItemStyle></asp:BoundColumn><asp:BoundColumn DataField="shobh_id" SortExpression="shobh_id" HeaderText="Shobh Id"><HeaderStyle wrap="False" /><ItemStyle></ItemStyle></asp:BoundColumn><asp:BoundColumn DataField="fndsion_noe_id" SortExpression="fndsion_noe_id" HeaderText="Fndsion Noe Id"><HeaderStyle wrap="False" /><ItemStyle horizontalalign="Right"></ItemStyle></asp:BoundColumn><asp:BoundColumn DataField="fndsion_tozi" SortExpression="fndsion_tozi" HeaderText="Fndsion Tozi"><HeaderStyle wrap="False" /><ItemStyle></ItemStyle></asp:BoundColumn><asp:BoundColumn DataField="sgf_noe_id" SortExpression="sgf_noe_id" HeaderText="Sgf Noe Id"><HeaderStyle wrap="False" /><ItemStyle horizontalalign="Right"></ItemStyle></asp:BoundColumn><asp:BoundColumn DataField="sgf_sayr" SortExpression="sgf_sayr" HeaderText="Sgf Sayr"><HeaderStyle wrap="False" /><ItemStyle></ItemStyle></asp:BoundColumn><asp:BoundColumn DataField="sgf_tozi" SortExpression="sgf_tozi" HeaderText="Sgf Tozi"><HeaderStyle wrap="False" /><ItemStyle></ItemStyle></asp:BoundColumn><asp:BoundColumn DataField="sklt_noe_id" SortExpression="sklt_noe_id" HeaderText="Sklt Noe Id"><HeaderStyle wrap="False" /><ItemStyle horizontalalign="Right"></ItemStyle></asp:BoundColumn><asp:BoundColumn DataField="sklt_tozi" SortExpression="sklt_tozi" HeaderText="Sklt Tozi"><HeaderStyle wrap="False" /><ItemStyle></ItemStyle></asp:BoundColumn><asp:BoundColumn DataField="sklt_sayr" SortExpression="sklt_sayr" HeaderText="Sklt Sayr"><HeaderStyle wrap="False" /><ItemStyle></ItemStyle></asp:BoundColumn><asp:BoundColumn DataField="divar_karji_glb_id" SortExpression="divar_karji_glb_id" HeaderText="Divar Karji Glb Id"><HeaderStyle wrap="False" /><ItemStyle horizontalalign="Right"></ItemStyle></asp:BoundColumn><asp:BoundColumn DataField="divar_dakli_glb_id" SortExpression="divar_dakli_glb_id" HeaderText="Divar Dakli Glb Id"><HeaderStyle wrap="False" /><ItemStyle></ItemStyle></asp:BoundColumn><asp:BoundColumn DataField="divar_dakli_glb_tozi" SortExpression="divar_dakli_glb_tozi" HeaderText="Divar Dakli Glb Tozi"><HeaderStyle wrap="False" /><ItemStyle horizontalalign="Right"></ItemStyle></asp:BoundColumn><asp:BoundColumn DataField="thvil_tarikh" SortExpression="thvil_tarikh" HeaderText="Thvil Tarikh"><HeaderStyle wrap="False" /><ItemStyle></ItemStyle></asp:BoundColumn><asp:BoundColumn DataField="thvil_krshnas" SortExpression="thvil_krshnas" HeaderText="Thvil Krshnas"><HeaderStyle wrap="False" /><ItemStyle horizontalalign="Right"></ItemStyle></asp:BoundColumn></Columns><PagerStyle NextPageText="| Next Page &amp;gt;" PrevPageText="&amp;lt; Previous Page" CssClass="DataGridPager" Wrap="False" /></asp:datagrid>
+        <uc1:Footer id="Footer1" runat="server"></uc1:Footer></form>
+</body>
+</html>

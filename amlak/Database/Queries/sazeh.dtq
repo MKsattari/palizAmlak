@@ -1,0 +1,9 @@
+[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
+Begin Query = "sazeh.dtq"
+   Begin RunProperties = 
+      SQL = "SELECT [sazeh].* FROM [sazeh]"
+      ParamPrefix = ""
+      ParamSuffix = ""
+      ParamEscape = "\"
+   End
+End

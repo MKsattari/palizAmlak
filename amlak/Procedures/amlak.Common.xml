@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>amlak.Common</name>
+    </assembly>
+    <members>
+        <member name="T:amlak.Common.CommonFactory">
+            <summary>
+            AbstractDataObjectFactory creates the 
+            appropriate DatabaseAccessObjectFactory for the application
+            </summary>
+        </member>
+        <member name="M:amlak.Common.CommonFactory.CreateDataObjectFactory">
+            <summary>
+            Creates a DataObject Factory
+            </summary>
+            <returns>a DatabaseAccessObjectFactory</returns>
+        </member>
+        <member name="M:amlak.Common.CommonFactory.CreateQuery">
+            <summary>
+            Creates a Query with the appropriate QueryBuilder for the database connection
+            </summary>
+            <returns>a new Query</returns>
+        </member>
+        <member name="M:amlak.Common.CommonFactory.#ctor">
+            <summary>
+            An instance of this class cannot be created
+            </summary>
+        </member>
+        <member name="T:amlak.DatabaseSchema.divar_dakli_glbTable">
+            <summary>
+            Defines the schema of the divar_dakli_glb table for use with the Query objects
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.divar_dakli_glbTable.szh_id">
+            <summary>
+            szh_id Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.divar_dakli_glbTable.divar_dakli_glb_id">
+            <summary>
+            divar_dakli_glb_id Column 
+            </summary>
+        </member>
+        <member name="T:amlak.DatabaseSchema.memariTable">
+            <summary>
+            Defines the schema of the memari table for use with the Query objects
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.memariTable.MemariID">
+            <summary>
+            MemariID Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.memariTable.ReshtehID">
+            <summary>
+            ReshtehID Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.memariTable.ModiriatID">
+            <summary>
+            ModiriatID Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.memariTable.ShahrestanID">
+            <summary>
+            ShahrestanID Column 
+            </summary>
+        </member>
+        <member name="T:amlak.DatabaseSchema.noeTable">
+            <summary>
+            Defines the schema of the noe table for use with the Query objects
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.noeTable.noe_id">
+            <summary>
+            noe_id Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.noeTable.noe_nam">
+            <summary>
+            noe_nam Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.noeTable.noe_cls">
+            <summary>
+            noe_cls Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.noeTable.noe_tozi">
+            <summary>
+            noe_tozi Column 
+            </summary>
+        </member>
+        <member name="T:amlak.DatabaseSchema.sazehTable">
+            <summary>
+            Defines the schema of the sazeh table for use with the Query objects
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.szh_id">
+            <summary>
+            szh_id Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.mlk_id">
+            <summary>
+            mlk_id Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.rsht_id">
+            <summary>
+            rsht_id Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.modirt_id">
+            <summary>
+            modirt_id Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.shrstan_id">
+            <summary>
+            shrstan_id Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.shobh_id">
+            <summary>
+            shobh_id Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.fndsion_noe_id">
+            <summary>
+            fndsion_noe_id Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.fndsion_tozi">
+            <summary>
+            fndsion_tozi Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.sgf_noe_id">
+            <summary>
+            sgf_noe_id Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.sgf_sayr">
+            <summary>
+            sgf_sayr Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.sgf_tozi">
+            <summary>
+            sgf_tozi Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.sklt_noe_id">
+            <summary>
+            sklt_noe_id Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.sklt_tozi">
+            <summary>
+            sklt_tozi Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.sklt_sayr">
+            <summary>
+            sklt_sayr Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.divar_karji_glb_id">
+            <summary>
+            divar_karji_glb_id Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.divar_dakli_glb_partition">
+            <summary>
+            divar_dakli_glb_partition Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.divar_dakli_glb_simani">
+            <summary>
+            divar_dakli_glb_simani Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.divar_dakli_glb_lika">
+            <summary>
+            divar_dakli_glb_lika Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.divar_dakli_glb_hblx">
+            <summary>
+            divar_dakli_glb_hblx Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.divar_dakli_glb_sofali">
+            <summary>
+            divar_dakli_glb_sofali Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.divar_dakli_glb_poma">
+            <summary>
+            divar_dakli_glb_poma Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.divar_dakli_glb_ajor">
+            <summary>
+            divar_dakli_glb_ajor Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.divar_dakli_glb_drywall">
+            <summary>
+            divar_dakli_glb_drywall Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.divar_dakli_glb_sayer">
+            <summary>
+            divar_dakli_glb_sayer Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.divar_dakli_glb_sayer_val">
+            <summary>
+            divar_dakli_glb_sayer_val Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.divar_dakli_glb_tozi">
+            <summary>
+            divar_dakli_glb_tozi Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.thvil_tarikh">
+            <summary>
+            thvil_tarikh Column 
+            </summary>
+        </member>
+        <member name="F:amlak.DatabaseSchema.sazehTable.thvil_krshnas">
+            <summary>
+            thvil_krshnas Column 
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,29 @@
+# Microsoft Developer Studio Project File - Database Project
+Begin DataProject = "AmlakMaskan"
+   MSDTVersion = "70"
+   DefDBRef = "GHOLAMI-PC\SQL2012"
+   Begin Folder = "Auto-Generated Stored Procedures"
+      Script = "010_ViewsForStoredProcedures.sql"
+      Script = "020_StoredProcedures_Select.sql"
+      Script = "030_StoredProcedures_Insert.sql"
+      Script = "040_StoredProcedures_Update.sql"
+      Script = "050_StoredProcedures_Delete.sql"
+   End
+   Begin Folder = "Change Scripts"
+   End
+   Begin Folder = "Create Scripts"
+   End
+   Begin DBRefFolder = "Database References"
+      Begin DBRefNode = "GHOLAMI-PC\SQL2012"
+         ConnectStr = "Provider=SQLOLEDB.1;pwd=123;User ID=sa;Initial Catalog=AmlakMaskan;Data Source=GHOLAMI-PC\SQL2012"
+         Colorizer = 5
+      End
+   End
+   Begin Folder = "Queries"
+      Query = "divar_dakli_glb.dtq"
+      Query = "memari.dtq"
+      Query = "noe.dtq"
+      Query = "sazeh.dtq"
+      
+   End
+End

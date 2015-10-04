@@ -1,0 +1,219 @@
+using System;
+using System.Collections;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Web;
+using System.Web.SessionState;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
+
+using RAD.AppFramework.QueryObjects;
+
+using AmlakMaskan.BusinessService;
+using AmlakMaskan.Data;
+using AmlakMaskan.Common;
+using AmlakMaskan.DatabaseSchema;
+
+namespace AmlakMaskan.WebUI
+{
+	/// <summary>
+	/// Searches the sazeh table
+	/// </summary>
+	public partial class sazeh_Search : SearchPage
+	{
+		#region Constants
+
+
+
+		#endregion
+
+
+		#region Fields
+
+		
+
+		#endregion
+
+
+		#region Page Events
+
+
+		/// <summary>
+		/// Event raised when the page is requested
+		/// </summary>
+		private void Page_Load(object sender, System.EventArgs e)
+		{
+			// AllowSearchAll = true;
+
+			int CriteriaCount = 0;
+
+			//
+			// Load the search criteria from the query string into the controls
+			//
+			CriteriaCount += LoadSearchString("szh_id", szh_id);
+			CriteriaCount += LoadSearchString("rsht_id", rsht_id);
+			CriteriaCount += LoadSearchString("modirt_id", modirt_id);
+			CriteriaCount += LoadSearchString("shrstan_id", shrstan_id);
+			CriteriaCount += LoadSearchString("shobh_id", shobh_id);
+			CriteriaCount += LoadSearchString("fndsion_noe_id", fndsion_noe_id);
+			CriteriaCount += LoadSearchString("fndsion_tozi", fndsion_tozi);
+			CriteriaCount += LoadSearchString("sgf_noe_id", sgf_noe_id);
+			CriteriaCount += LoadSearchString("sgf_sayr", sgf_sayr);
+			CriteriaCount += LoadSearchString("sgf_tozi", sgf_tozi);
+			CriteriaCount += LoadSearchString("sklt_noe_id", sklt_noe_id);
+			CriteriaCount += LoadSearchString("sklt_tozi", sklt_tozi);
+			CriteriaCount += LoadSearchString("sklt_sayr", sklt_sayr);
+			CriteriaCount += LoadSearchString("divar_karji_glb_id", divar_karji_glb_id);
+			CriteriaCount += LoadSearchString("divar_dakli_glb_id", divar_dakli_glb_id);
+			CriteriaCount += LoadSearchBetween("divar_dakli_glb_tozi", divar_dakli_glb_toziBegin, divar_dakli_glb_toziEnd);
+			CriteriaCount += LoadSearchString("thvil_tarikh", thvil_tarikh);
+			CriteriaCount += LoadSearchBetween("thvil_krshnas", thvil_krshnasBegin, thvil_krshnasEnd);
+			
+
+			if (IsPostBack)
+			{
+			}
+			else
+			{
+				PageTitle = "sazeh Search";
+
+				if (CriteriaCount > 0)
+				{
+					sazehGrid.CurrentPageIndex = FirstPage;
+					LoadData();
+				}
+			}
+		}
+
+		#endregion
+
+
+		#region Event Handlers for Controls
+
+		/// <summary>
+		/// Event raised when a button is pressed on the grid
+		/// </summary>
+		private void sazehGrid_ItemCommand(object source, DataGridCommandEventArgs e)
+		{
+			switch (e.CommandName)
+			{
+				case "Edit":
+					Response.Redirect(
+						string.Format("sazeh.aspx?{0}={1}", "szh_id", Server.UrlEncode(sazehGrid.DataKeys[e.Item.ItemIndex].ToString()))
+						);	
+					break;
+			}
+		}
+
+		/// <summary>
+		/// Event raised when the next or previous links are clicked on the grid
+		/// </summary>
+		private void sazehGrid_PageIndexChanged(object source, DataGridPageChangedEventArgs e)
+		{
+			sazehGrid.CurrentPageIndex = e.NewPageIndex;
+
+			LoadData();
+		}
+
+		/// <summary>
+		/// Event raised when a column heading is clicked and sorting is enabled
+		/// </summary>
+		private void sazehGrid_SortCommand(object source, DataGridSortCommandEventArgs e)
+		{
+			RedirectWithSortExpression(e.SortExpression);
+		}
+
+		
+		#endregion
+
+
+		#region Methods - Private
+
+		/// <summary>
+		/// Searches the sazeh table for rows that match 
+		/// the criteria entered in the search form
+		/// </summary>
+		private void LoadData()
+		{
+			Query m_sazehQuery = CommonFactory.CreateQuery();
+
+			AddToQuery(m_sazehQuery, sazehTable.szh_id, Comparison.EqualTo, szh_id);
+			AddToQuery(m_sazehQuery, sazehTable.rsht_id, Comparison.EqualTo, rsht_id);
+			AddToQuery(m_sazehQuery, sazehTable.modirt_id, Comparison.EqualTo, modirt_id);
+			AddToQuery(m_sazehQuery, sazehTable.shrstan_id, Comparison.EqualTo, shrstan_id);
+			AddToQuery(m_sazehQuery, sazehTable.shobh_id, Comparison.EqualTo, shobh_id);
+			AddToQuery(m_sazehQuery, sazehTable.fndsion_noe_id, Comparison.EqualTo, fndsion_noe_id);
+			AddToQuery(m_sazehQuery, sazehTable.fndsion_tozi, Comparison.Contains, fndsion_tozi);
+			AddToQuery(m_sazehQuery, sazehTable.sgf_noe_id, Comparison.EqualTo, sgf_noe_id);
+			AddToQuery(m_sazehQuery, sazehTable.sgf_sayr, Comparison.Contains, sgf_sayr);
+			AddToQuery(m_sazehQuery, sazehTable.sgf_tozi, Comparison.Contains, sgf_tozi);
+			AddToQuery(m_sazehQuery, sazehTable.sklt_noe_id, Comparison.EqualTo, sklt_noe_id);
+			AddToQuery(m_sazehQuery, sazehTable.sklt_tozi, Comparison.Contains, sklt_tozi);
+			AddToQuery(m_sazehQuery, sazehTable.sklt_sayr, Comparison.Contains, sklt_sayr);
+			AddToQuery(m_sazehQuery, sazehTable.divar_karji_glb_id, Comparison.EqualTo, divar_karji_glb_id);
+			AddToQuery(m_sazehQuery, sazehTable.divar_dakli_glb_id, Comparison.EqualTo, divar_dakli_glb_id);
+			AddToQuery(m_sazehQuery, sazehTable.divar_dakli_glb_tozi, divar_dakli_glb_toziBegin, divar_dakli_glb_toziEnd);
+			AddToQuery(m_sazehQuery, sazehTable.thvil_tarikh, Comparison.Contains, thvil_tarikh);
+			AddToQuery(m_sazehQuery, sazehTable.thvil_krshnas, thvil_krshnasBegin, thvil_krshnasEnd);
+			
+
+			AddSortToQuery(m_sazehQuery, typeof(sazehTable));
+
+			sazehService sazehLogic = new sazehService();
+			int ResultCount = sazehLogic.GetByQuery(m_sazehDataSet, m_sazehQuery);
+
+			if (ResultCount > 0)
+			{
+				lblMessage.Text = string.Format(MatchesFoundMessage, ResultCount);
+				sazehGrid.DataBind();
+			}
+			else
+			{
+				lblMessage.Text = NoMatchesMessage;
+			}			
+		}
+
+
+		#endregion
+
+
+		#region Web Form Designer generated code
+		
+		protected AmlakMaskan.Data.sazehDataSet m_sazehDataSet;
+		
+		override protected void OnInit(EventArgs e)
+		{
+			//
+			// CODEGEN: This call is required by the ASP.NET Web Form Designer.
+			//
+			InitializeComponent();
+			base.OnInit(e);
+		}
+		
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{    
+			this.m_sazehDataSet = new AmlakMaskan.Data.sazehDataSet();
+			((System.ComponentModel.ISupportInitialize)(this.m_sazehDataSet)).BeginInit();
+			this.sazehGrid.ItemCommand += new System.Web.UI.WebControls.DataGridCommandEventHandler(this.sazehGrid_ItemCommand);
+			this.sazehGrid.PageIndexChanged += new System.Web.UI.WebControls.DataGridPageChangedEventHandler(this.sazehGrid_PageIndexChanged);
+			this.sazehGrid.SortCommand += new System.Web.UI.WebControls.DataGridSortCommandEventHandler(this.sazehGrid_SortCommand);
+			// 
+			// m_sazehDataSet
+			// 
+			this.m_sazehDataSet.DataSetName = "sazehDataSet";
+			this.m_sazehDataSet.Locale = new System.Globalization.CultureInfo("en-US");
+			this.Load += new System.EventHandler(this.Page_Load);
+			((System.ComponentModel.ISupportInitialize)(this.m_sazehDataSet)).EndInit();
+
+		}
+		
+		#endregion
+
+	}
+}

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="noeDataSet" targetNamespace="http://tempuri.org/noeDataSet.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/noeDataSet.xsd" xmlns:mstns="http://tempuri.org/noeDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"  xmlns:mscodegen="urn:schemas-microsoft-com:xml-msprop">
+	<xs:element name="noeDataSet" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="noe">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="noe_x005F_id" type="xs:int" minOccurs="1" msdata:Caption="Noe Id" mscodegen:typedName="noe_id" />
+							<xs:element name="noe_x005F_nam" type="xs:string" minOccurs="1" msdata:Caption="Noe Nam" mscodegen:typedName="noe_nam" />
+							<xs:element name="noe_x005F_cls" type="xs:string" minOccurs="1" msdata:Caption="Noe Cls" mscodegen:typedName="noe_cls" />
+							<xs:element name="noe_x005F_tozi" type="xs:string" minOccurs="1" msdata:Caption="Noe Tozi" mscodegen:typedName="noe_tozi" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:key name="noeDataSetKey1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:noe" />
+			<xs:field xpath="mstns:noe_x005F_id" />
+		</xs:key>
+	</xs:element>
+</xs:schema>

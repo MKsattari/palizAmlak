@@ -1,0 +1,1496 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>amlak.DataAccess</name>
+    </assembly>
+    <members>
+        <member name="T:amlak.DataAccess.Adapters.Base.DataAccessObject">
+            <summary>
+            DataAccessObject
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="F:amlak.DataAccess.Adapters.Base.DataAccessObject.m_DataObjectFactory">
+            <summary>
+            The factory used to create Database objects
+            </summary>
+        </member>
+        <member name="F:amlak.DataAccess.Adapters.Base.DataAccessObject.m_DatabaseConnection">
+            <summary>
+            The Database Connection that will be used to read from and update the Database
+            </summary>
+        </member>
+        <member name="F:amlak.DataAccess.Adapters.Base.DataAccessObject.m_DbDataAdapter">
+            <summary>
+            The DataAdapter used to update the database
+            </summary>
+        </member>
+        <member name="F:amlak.DataAccess.Adapters.Base.DataAccessObject.m_AdapterCommands">
+            <summary>
+            The IDbDataAdapter interface used to specify the Commands
+            </summary>
+        </member>
+        <member name="F:amlak.DataAccess.Adapters.Base.DataAccessObject.InsertCommandName">
+            <summary>
+            The name of the stored procedure that is used to insert a new row
+            </summary>
+        </member>
+        <member name="F:amlak.DataAccess.Adapters.Base.DataAccessObject.UpdateCommandName">
+            <summary>
+            The name of the stored procedure that is used to update an existing row
+            </summary>
+        </member>
+        <member name="F:amlak.DataAccess.Adapters.Base.DataAccessObject.DeleteCommandName">
+            <summary>
+            The name of the stored procedure that is used to delete a row
+            </summary>
+        </member>
+        <member name="F:amlak.DataAccess.Adapters.Base.DataAccessObject.SelectAllCommandName">
+            <summary>
+            The name of the stored procedure that is used to retrieve all rows
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.DataAccessObject.#ctor">
+            <summary>
+            Creates a new DataAccess object
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.DataAccessObject.CreateDataObjectFactory">
+            <summary>
+            Creates an instance of a factory that is used to create Database objects
+            </summary>
+            <returns>A DatabaseAccessObjectFactory instance </returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.DataAccessObject.LoadFromCommand(System.Data.DataSet,System.Data.IDbCommand)">
+            <summary>
+            Executes the specified command and loads the resulting rows into a DataSet 
+            </summary>
+            <param name="dataSetFill">The DataSet to place the returned rows into</param>
+            <param name="fillCommand">The command that will return rows to place into the DataTable</param>
+            <returns>A count of the number of rows added</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.DataAccessObject.AddInsertCommandParameters(System.Data.IDbCommand)">
+            <summary>
+            Adds parameters representing the columns in the  
+            new row to the Insert Command
+            </summary>
+            <param name="insertCommand">The command to add the parameters to</param>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.DataAccessObject.AddUpdateCommandParameters(System.Data.IDbCommand)">
+            <summary>
+            Adds parameters representing the columns in the 
+            updated row to the Update Command
+            </summary>
+            <param name="updateCommand">The Command to add the parameters to</param>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.DataAccessObject.AddDeleteCommandParameters(System.Data.IDbCommand)">
+            <summary>
+            Adds parameters representing the columns in the
+            deleted row to the Delete Command
+            </summary>
+            <param name="deleteCommand">The Command to add the parameters to</param>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.DataAccessObject.OnRowUpdating(System.Data.Common.RowUpdatingEventArgs)">
+            <summary>
+            Raises the RowUpdating event
+            </summary>
+            <param name="e">The RowUpdatingEventArgs for the event</param>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.DataAccessObject.OnRowUpdated(System.Data.Common.RowUpdatedEventArgs)">
+            <summary>
+            Raises the RowUpdated event
+            </summary>
+            <param name="e">The RowUpdatingEventArgs for the event</param>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.DataAccessObject.DataAdapter_SqlRowUpdating(System.Object,System.Data.SqlClient.SqlRowUpdatingEventArgs)">
+            <summary>
+            Handles the RowUpdating Event from a SqlDataAdapter 
+            </summary>
+            <param name="sender">The event sender</param>
+            <param name="e">The event arguments</param>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.DataAccessObject.DataAdapter_OleDbRowUpdating(System.Object,System.Data.OleDb.OleDbRowUpdatingEventArgs)">
+            <summary>
+            Handles the RowUpdating Event from a OleDbDataAdapter
+            </summary>
+            <param name="sender">The object that raised the event</param>
+            <param name="e">The event arguments</param>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.DataAccessObject.DataAdapter_SqlRowUpdated(System.Object,System.Data.SqlClient.SqlRowUpdatedEventArgs)">
+            <summary>
+            Handles the RowUpdated Event from a SqlDataAdapter 
+            </summary>
+            <param name="sender">The object that raised the event</param>
+            <param name="e">The event arguments</param>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.DataAccessObject.DataAdapter_OleDbRowUpdated(System.Object,System.Data.OleDb.OleDbRowUpdatedEventArgs)">
+            <summary>
+            Handles the RowUpdated Event from a OleDbDataAdapter
+            </summary>
+            <param name="sender">The object that raised the event</param>
+            <param name="e">The event arguments</param>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.DataAccessObject.UseConnectionAndTransaction(RAD.AppFramework.Data.DatabaseConnection)">
+            <summary>
+            Specifies the Database connection to use for any Data Access operations
+            </summary>
+            <param name="dbConnection">the Database connection to use for any Data Access operations</param>
+            <returns>true on success, false otherwise</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.DataAccessObject.FillSchema(System.Data.DataSet,System.Data.SchemaType)">
+            <summary>
+            Adds a empty DataTable to the specified DataSet 
+            and configures the schema to match that in the data source 
+            based on the specified SchemaType.
+            </summary>
+            <param name="dataSetSchema">The DataSet to add the schema to</param>
+            <param name="schemaType">One of the SchemaType values</param>
+            <returns>An array of DataTable objects that contain schema information</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.DataAccessObject.GetFillParameters">
+            <summary>
+            Gets the parameters used when executing the SELECT statement
+            </summary>
+            <returns>An array of IDataParameter objects</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.DataAccessObject.Fill(System.Data.DataSet)">
+            <summary>
+            Fill the DataSet with all rows
+            </summary>
+            <param name="dataSetFill">The DataSet to fill</param>
+            <returns>A count of the rows added to the DataSet</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.DataAccessObject.FillByQuery(System.Data.DataSet,RAD.AppFramework.QueryObjects.Query)">
+            <summary>
+            Fill the DataSet by Query Definition
+            </summary>
+            <param name="dataSetFill">The DataSet to fill</param>
+            <param name="queryDefinition">An Query object that defines the the query</param>
+            <returns>A count of the rows added to the DataSet</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.DataAccessObject.Update(System.Data.DataSet)">
+            <summary>
+            Calls the respective INSERT, UPDATE, or DELETE statements 
+            for each inserted, updated, or deleted row in the specified DataSet
+            </summary>
+            <param name="dataSetUpdate">The DataSet used to update the data source</param>
+            <returns>The number of rows successfully updated from the DataSet</returns>
+        </member>
+        <member name="E:amlak.DataAccess.Adapters.Base.DataAccessObject.RowUpdating">
+            <summary>
+            The RowUpdating event is raised just before an Update to a row begins
+            </summary>
+        </member>
+        <member name="E:amlak.DataAccess.Adapters.Base.DataAccessObject.RowUpdated">
+            <summary>
+            The RowUpdated event message is raised after an Update to a row has completed
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Adapters.Base.DataAccessObject.DataObjectFactory">
+            <summary>
+            The factory used to create Database objects
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Adapters.Base.DataAccessObject.Adapter">
+            <summary>
+            The underlying DbDataAdapter
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Adapters.Base.DataAccessObject.AdapterCommands">
+            <summary>
+            The Commands used by the underlying DataAdapter
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Adapters.Base.DataAccessObject.DbConnection">
+            <summary>
+            The Database Connection that will be used to read from and update the Database
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Adapters.Base.DataAccessObject.MissingMappingAction">
+            <summary>
+            Indicates or specifies whether unmapped source tables or columns are passed with 
+            their source names in order to be filtered or to raise an error
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Adapters.Base.DataAccessObject.MissingSchemaAction">
+            <summary>
+            Indicates or specifies whether missing source tables, columns, and their 
+            relationships are added to the data set schema, ignored, or cause an error to be raised
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Adapters.Base.DataAccessObject.TableMappings">
+            <summary>
+            Indicates how a source table is mapped to a data set table
+            </summary>
+        </member>
+        <member name="T:amlak.DataAccess.Adapters.Base.divar_dakli_glbDataAdapterBase">
+            <summary>
+            divar_dakli_glbDataAdapterBase handles SELECT, INSERT, UPDATE and DELETE operations 
+            for the divar_dakli_glb table. 
+            <seealso cref="T:amlak.DataAccess.Adapters.divar_dakli_glbDataAdapter"/>
+            </summary>
+            <remarks>
+            Do not make modifications to this class. Any additional functionality for the divar_dakli_glb table 
+            must be added to the divar_dakli_glbDataAdapter class.
+            <br/><br/>
+            This class was automatically generated by Rad Software NextGeneration <a href="http://www.radsoftware.com.au">http://www.radsoftware.com.au</a>
+            </remarks>
+        </member>
+        <member name="F:amlak.DataAccess.Adapters.Base.divar_dakli_glbDataAdapterBase.SelectByszh_idAnddivar_dakli_glb_idCommandName">
+            <summary>
+            The name of the stored procedure that is used to retrieve rows from the divar_dakli_glb table by primary key
+            </summary>
+        </member>
+        <member name="F:amlak.DataAccess.Adapters.Base.divar_dakli_glbDataAdapterBase.SelectBydivar_dakli_glb_idCommandName">
+            <summary>
+            The stored procedure used to retrieve rows based on the relationship to the noe table 
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.divar_dakli_glbDataAdapterBase.#ctor(RAD.AppFramework.Data.DatabaseConnection)">
+            <summary>
+            Creates a new divar_dakli_glbDataAdapterBase 
+            that uses the specified DatabaseConnection
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.divar_dakli_glbDataAdapterBase.#ctor">
+            <summary>
+            Creates a new divar_dakli_glbDataAdapterBase 
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.divar_dakli_glbDataAdapterBase.CreateDataObjectFactory">
+            <summary>
+            Creates an instance of a factory that is used to create Database objects
+            </summary>
+            <returns>A DatabaseAccessObjectFactory instance </returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.divar_dakli_glbDataAdapterBase.AddInsertCommandParameters(System.Data.IDbCommand)">
+            <summary>
+            Adds parameters representing the columns in the  
+            new row to the Insert Command
+            </summary>
+            <param name="insertCommand">The command to add the parameters to</param>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.divar_dakli_glbDataAdapterBase.AddUpdateCommandParameters(System.Data.IDbCommand)">
+            <summary>
+            Adds parameters representing the columns in the 
+            updated row to the Update Command
+            </summary>
+            <param name="updateCommand">The Command to add the parameters to</param>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.divar_dakli_glbDataAdapterBase.AddDeleteCommandParameters(System.Data.IDbCommand)">
+            <summary>
+            Adds parameters representing the columns in the
+            deleted row to the Delete Command
+            </summary>
+            <param name="deleteCommand">The Command to add the parameters to</param>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.divar_dakli_glbDataAdapterBase.Update(System.Data.DataSet)">
+            <summary>
+            Calls the respective INSERT, UPDATE, or DELETE statements 
+            for each inserted, updated, or deleted row in the specified DataSet
+            </summary>
+            <param name="dataSetUpdate">The DataSet used to update the data source</param>
+            <returns>The number of rows successfully updated from the DataSet</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.divar_dakli_glbDataAdapterBase.Fill(System.Data.DataSet)">
+            <summary>
+            Fill the DataSet with all rows from the divar_dakli_glb Table
+            </summary>
+            <param name="dataSetFill">The DataSet to fill</param>
+            <returns>A count of the rows added to the DataSet</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.divar_dakli_glbDataAdapterBase.FillByQuery(System.Data.DataSet,RAD.AppFramework.QueryObjects.Query)">
+            <summary>
+            Fill the DataSet by Query Definition
+            </summary>
+            <param name="dataSetFill">The DataSet to fill</param>
+            <param name="queryDefinition">An Query object that defines the the query</param>
+            <returns>A count of the rows added to the DataSet</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.divar_dakli_glbDataAdapterBase.FillByszh_idAnddivar_dakli_glb_id(System.Data.DataSet,System.Int32,System.Int32)">
+            <summary>
+            Fill the DataSet with all rows from the divar_dakli_glb Table by Primary key (szh_id and divar_dakli_glb_id)
+            </summary>
+            <param name="dataSetFill">The DataSet to fill</param>
+            <param name="szh_id">The szh_id to use as search criteria</param>
+            <param name="divar_dakli_glb_id">The divar_dakli_glb_id to use as search criteria</param>
+            <returns>A count of the rows added to the DataSet</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.divar_dakli_glbDataAdapterBase.FillBydivar_dakli_glb_id(System.Data.DataSet,System.Int32)">
+            <summary>
+            Fill the DataSet with rows from the divar_dakli_glb table that match the specified divar_dakli_glb_id
+            </summary>
+            <param name="dataSetFill">The DataSet to fill</param>
+            <param name="divar_dakli_glb_id">The divar_dakli_glb_id to use as search criteria</param>
+            <returns>A count of the rows added to the DataSet</returns>
+        </member>
+        <member name="T:amlak.DataAccess.Adapters.Base.memariDataAdapterBase">
+            <summary>
+            memariDataAdapterBase handles SELECT, INSERT, UPDATE and DELETE operations 
+            for the memari table. 
+            <seealso cref="T:amlak.DataAccess.Adapters.memariDataAdapter"/>
+            </summary>
+            <remarks>
+            Do not make modifications to this class. Any additional functionality for the memari table 
+            must be added to the memariDataAdapter class.
+            <br/><br/>
+            This class was automatically generated by Rad Software NextGeneration <a href="http://www.radsoftware.com.au">http://www.radsoftware.com.au</a>
+            </remarks>
+        </member>
+        <member name="F:amlak.DataAccess.Adapters.Base.memariDataAdapterBase.SelectByMemariIDCommandName">
+            <summary>
+            The name of the stored procedure that is used to retrieve rows from the memari table by primary key
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.memariDataAdapterBase.#ctor(RAD.AppFramework.Data.DatabaseConnection)">
+            <summary>
+            Creates a new memariDataAdapterBase 
+            that uses the specified DatabaseConnection
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.memariDataAdapterBase.#ctor">
+            <summary>
+            Creates a new memariDataAdapterBase 
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.memariDataAdapterBase.CreateDataObjectFactory">
+            <summary>
+            Creates an instance of a factory that is used to create Database objects
+            </summary>
+            <returns>A DatabaseAccessObjectFactory instance </returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.memariDataAdapterBase.AddInsertCommandParameters(System.Data.IDbCommand)">
+            <summary>
+            Adds parameters representing the columns in the  
+            new row to the Insert Command
+            </summary>
+            <param name="insertCommand">The command to add the parameters to</param>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.memariDataAdapterBase.AddUpdateCommandParameters(System.Data.IDbCommand)">
+            <summary>
+            Adds parameters representing the columns in the 
+            updated row to the Update Command
+            </summary>
+            <param name="updateCommand">The Command to add the parameters to</param>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.memariDataAdapterBase.AddDeleteCommandParameters(System.Data.IDbCommand)">
+            <summary>
+            Adds parameters representing the columns in the
+            deleted row to the Delete Command
+            </summary>
+            <param name="deleteCommand">The Command to add the parameters to</param>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.memariDataAdapterBase.Update(System.Data.DataSet)">
+            <summary>
+            Calls the respective INSERT, UPDATE, or DELETE statements 
+            for each inserted, updated, or deleted row in the specified DataSet
+            </summary>
+            <param name="dataSetUpdate">The DataSet used to update the data source</param>
+            <returns>The number of rows successfully updated from the DataSet</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.memariDataAdapterBase.Fill(System.Data.DataSet)">
+            <summary>
+            Fill the DataSet with all rows from the memari Table
+            </summary>
+            <param name="dataSetFill">The DataSet to fill</param>
+            <returns>A count of the rows added to the DataSet</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.memariDataAdapterBase.FillByQuery(System.Data.DataSet,RAD.AppFramework.QueryObjects.Query)">
+            <summary>
+            Fill the DataSet by Query Definition
+            </summary>
+            <param name="dataSetFill">The DataSet to fill</param>
+            <param name="queryDefinition">An Query object that defines the the query</param>
+            <returns>A count of the rows added to the DataSet</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.memariDataAdapterBase.FillByMemariID(System.Data.DataSet,System.Int32)">
+            <summary>
+            Fill the DataSet with all rows from the memari Table by Primary key (MemariID)
+            </summary>
+            <param name="dataSetFill">The DataSet to fill</param>
+            <param name="MemariID">The MemariID to use as search criteria</param>
+            <returns>A count of the rows added to the DataSet</returns>
+        </member>
+        <member name="T:amlak.DataAccess.Adapters.Base.noeDataAdapterBase">
+            <summary>
+            noeDataAdapterBase handles SELECT, INSERT, UPDATE and DELETE operations 
+            for the noe table. 
+            <seealso cref="T:amlak.DataAccess.Adapters.noeDataAdapter"/>
+            </summary>
+            <remarks>
+            Do not make modifications to this class. Any additional functionality for the noe table 
+            must be added to the noeDataAdapter class.
+            <br/><br/>
+            This class was automatically generated by Rad Software NextGeneration <a href="http://www.radsoftware.com.au">http://www.radsoftware.com.au</a>
+            </remarks>
+        </member>
+        <member name="F:amlak.DataAccess.Adapters.Base.noeDataAdapterBase.SelectBynoe_idCommandName">
+            <summary>
+            The name of the stored procedure that is used to retrieve rows from the noe table by primary key
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.noeDataAdapterBase.#ctor(RAD.AppFramework.Data.DatabaseConnection)">
+            <summary>
+            Creates a new noeDataAdapterBase 
+            that uses the specified DatabaseConnection
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.noeDataAdapterBase.#ctor">
+            <summary>
+            Creates a new noeDataAdapterBase 
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.noeDataAdapterBase.CreateDataObjectFactory">
+            <summary>
+            Creates an instance of a factory that is used to create Database objects
+            </summary>
+            <returns>A DatabaseAccessObjectFactory instance </returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.noeDataAdapterBase.AddInsertCommandParameters(System.Data.IDbCommand)">
+            <summary>
+            Adds parameters representing the columns in the  
+            new row to the Insert Command
+            </summary>
+            <param name="insertCommand">The command to add the parameters to</param>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.noeDataAdapterBase.AddUpdateCommandParameters(System.Data.IDbCommand)">
+            <summary>
+            Adds parameters representing the columns in the 
+            updated row to the Update Command
+            </summary>
+            <param name="updateCommand">The Command to add the parameters to</param>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.noeDataAdapterBase.AddDeleteCommandParameters(System.Data.IDbCommand)">
+            <summary>
+            Adds parameters representing the columns in the
+            deleted row to the Delete Command
+            </summary>
+            <param name="deleteCommand">The Command to add the parameters to</param>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.noeDataAdapterBase.Update(System.Data.DataSet)">
+            <summary>
+            Calls the respective INSERT, UPDATE, or DELETE statements 
+            for each inserted, updated, or deleted row in the specified DataSet
+            </summary>
+            <param name="dataSetUpdate">The DataSet used to update the data source</param>
+            <returns>The number of rows successfully updated from the DataSet</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.noeDataAdapterBase.Fill(System.Data.DataSet)">
+            <summary>
+            Fill the DataSet with all rows from the noe Table
+            </summary>
+            <param name="dataSetFill">The DataSet to fill</param>
+            <returns>A count of the rows added to the DataSet</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.noeDataAdapterBase.FillByQuery(System.Data.DataSet,RAD.AppFramework.QueryObjects.Query)">
+            <summary>
+            Fill the DataSet by Query Definition
+            </summary>
+            <param name="dataSetFill">The DataSet to fill</param>
+            <param name="queryDefinition">An Query object that defines the the query</param>
+            <returns>A count of the rows added to the DataSet</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.noeDataAdapterBase.FillBynoe_id(System.Data.DataSet,System.Int32)">
+            <summary>
+            Fill the DataSet with all rows from the noe Table by Primary key (noe_id)
+            </summary>
+            <param name="dataSetFill">The DataSet to fill</param>
+            <param name="noe_id">The noe_id to use as search criteria</param>
+            <returns>A count of the rows added to the DataSet</returns>
+        </member>
+        <member name="T:amlak.DataAccess.Adapters.Base.sazehDataAdapterBase">
+            <summary>
+            sazehDataAdapterBase handles SELECT, INSERT, UPDATE and DELETE operations 
+            for the sazeh table. 
+            <seealso cref="T:amlak.DataAccess.Adapters.sazehDataAdapter"/>
+            </summary>
+            <remarks>
+            Do not make modifications to this class. Any additional functionality for the sazeh table 
+            must be added to the sazehDataAdapter class.
+            <br/><br/>
+            This class was automatically generated by Rad Software NextGeneration <a href="http://www.radsoftware.com.au">http://www.radsoftware.com.au</a>
+            </remarks>
+        </member>
+        <member name="F:amlak.DataAccess.Adapters.Base.sazehDataAdapterBase.SelectByszh_idCommandName">
+            <summary>
+            The name of the stored procedure that is used to retrieve rows from the sazeh table by primary key
+            </summary>
+        </member>
+        <member name="F:amlak.DataAccess.Adapters.Base.sazehDataAdapterBase.SelectByfndsion_noe_idCommandName">
+            <summary>
+            The stored procedure used to retrieve rows based on the relationship to the noe table 
+            </summary>
+        </member>
+        <member name="F:amlak.DataAccess.Adapters.Base.sazehDataAdapterBase.SelectBysgf_noe_idCommandName">
+            <summary>
+            The stored procedure used to retrieve rows based on the relationship to the noe table 
+            </summary>
+        </member>
+        <member name="F:amlak.DataAccess.Adapters.Base.sazehDataAdapterBase.SelectBysklt_noe_idCommandName">
+            <summary>
+            The stored procedure used to retrieve rows based on the relationship to the noe table 
+            </summary>
+        </member>
+        <member name="F:amlak.DataAccess.Adapters.Base.sazehDataAdapterBase.SelectBydivar_karji_glb_idCommandName">
+            <summary>
+            The stored procedure used to retrieve rows based on the relationship to the noe table 
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.sazehDataAdapterBase.#ctor(RAD.AppFramework.Data.DatabaseConnection)">
+            <summary>
+            Creates a new sazehDataAdapterBase 
+            that uses the specified DatabaseConnection
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.sazehDataAdapterBase.#ctor">
+            <summary>
+            Creates a new sazehDataAdapterBase 
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.sazehDataAdapterBase.CreateDataObjectFactory">
+            <summary>
+            Creates an instance of a factory that is used to create Database objects
+            </summary>
+            <returns>A DatabaseAccessObjectFactory instance </returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.sazehDataAdapterBase.AddInsertCommandParameters(System.Data.IDbCommand)">
+            <summary>
+            Adds parameters representing the columns in the  
+            new row to the Insert Command
+            </summary>
+            <param name="insertCommand">The command to add the parameters to</param>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.sazehDataAdapterBase.AddUpdateCommandParameters(System.Data.IDbCommand)">
+            <summary>
+            Adds parameters representing the columns in the 
+            updated row to the Update Command
+            </summary>
+            <param name="updateCommand">The Command to add the parameters to</param>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.sazehDataAdapterBase.AddDeleteCommandParameters(System.Data.IDbCommand)">
+            <summary>
+            Adds parameters representing the columns in the
+            deleted row to the Delete Command
+            </summary>
+            <param name="deleteCommand">The Command to add the parameters to</param>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.sazehDataAdapterBase.Update(System.Data.DataSet)">
+            <summary>
+            Calls the respective INSERT, UPDATE, or DELETE statements 
+            for each inserted, updated, or deleted row in the specified DataSet
+            </summary>
+            <param name="dataSetUpdate">The DataSet used to update the data source</param>
+            <returns>The number of rows successfully updated from the DataSet</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.sazehDataAdapterBase.Fill(System.Data.DataSet)">
+            <summary>
+            Fill the DataSet with all rows from the sazeh Table
+            </summary>
+            <param name="dataSetFill">The DataSet to fill</param>
+            <returns>A count of the rows added to the DataSet</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.sazehDataAdapterBase.FillByQuery(System.Data.DataSet,RAD.AppFramework.QueryObjects.Query)">
+            <summary>
+            Fill the DataSet by Query Definition
+            </summary>
+            <param name="dataSetFill">The DataSet to fill</param>
+            <param name="queryDefinition">An Query object that defines the the query</param>
+            <returns>A count of the rows added to the DataSet</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.sazehDataAdapterBase.FillByszh_id(System.Data.DataSet,System.Int32)">
+            <summary>
+            Fill the DataSet with all rows from the sazeh Table by Primary key (szh_id)
+            </summary>
+            <param name="dataSetFill">The DataSet to fill</param>
+            <param name="szh_id">The szh_id to use as search criteria</param>
+            <returns>A count of the rows added to the DataSet</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.sazehDataAdapterBase.FillByfndsion_noe_id(System.Data.DataSet,System.Int32)">
+            <summary>
+            Fill the DataSet with rows from the sazeh table that match the specified fndsion_noe_id
+            </summary>
+            <param name="dataSetFill">The DataSet to fill</param>
+            <param name="fndsion_noe_id">The fndsion_noe_id to use as search criteria</param>
+            <returns>A count of the rows added to the DataSet</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.sazehDataAdapterBase.FillBysgf_noe_id(System.Data.DataSet,System.Int32)">
+            <summary>
+            Fill the DataSet with rows from the sazeh table that match the specified sgf_noe_id
+            </summary>
+            <param name="dataSetFill">The DataSet to fill</param>
+            <param name="sgf_noe_id">The sgf_noe_id to use as search criteria</param>
+            <returns>A count of the rows added to the DataSet</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.sazehDataAdapterBase.FillBysklt_noe_id(System.Data.DataSet,System.Int32)">
+            <summary>
+            Fill the DataSet with rows from the sazeh table that match the specified sklt_noe_id
+            </summary>
+            <param name="dataSetFill">The DataSet to fill</param>
+            <param name="sklt_noe_id">The sklt_noe_id to use as search criteria</param>
+            <returns>A count of the rows added to the DataSet</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.Base.sazehDataAdapterBase.FillBydivar_karji_glb_id(System.Data.DataSet,System.Int32)">
+            <summary>
+            Fill the DataSet with rows from the sazeh table that match the specified divar_karji_glb_id
+            </summary>
+            <param name="dataSetFill">The DataSet to fill</param>
+            <param name="divar_karji_glb_id">The divar_karji_glb_id to use as search criteria</param>
+            <returns>A count of the rows added to the DataSet</returns>
+        </member>
+        <member name="T:amlak.DataAccess.Adapters.divar_dakli_glbDataAdapter">
+            <summary>
+            divar_dakli_glbDataAdapter allows for application specific data operations to be added without 
+            having to make changes to the auto-generated divar_dakli_glbDataAdapterBase class. 
+            <seealso cref="T:amlak.DataAccess.Adapters.Base.divar_dakli_glbDataAdapterBase"/>
+            </summary>
+            <remarks>
+            Any modifications must be made to the divar_dakli_glbDataAdapter class.
+            <br/><br/>
+            This class was automatically generated by Rad Software NextGeneration <a href="http://www.radsoftware.com.au">http://www.radsoftware.com.au</a>
+            </remarks>
+        </member>
+        <member name="F:amlak.DataAccess.Adapters.divar_dakli_glbDataAdapter.m_Instance">
+            <summary>
+            A static instance of the divar_dakli_glbDataAdapter
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.divar_dakli_glbDataAdapter.#ctor(RAD.AppFramework.Data.DatabaseConnection)">
+            <summary>
+            Creates a new divar_dakli_glbDataAdapter 
+            that uses the specified DatabaseConnection
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.divar_dakli_glbDataAdapter.#ctor">
+            <summary>
+            Creates a new divar_dakli_glbDataAdapter 
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.divar_dakli_glbDataAdapter.#cctor">
+            <summary>
+            Initializes the static instance
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Adapters.divar_dakli_glbDataAdapter.Instance">
+            <summary>
+            A default instance of the divar_dakli_glbDataAdapter
+            </summary>
+        </member>
+        <member name="T:amlak.DataAccess.Adapters.RowUpdatingEventHandler">
+            <summary>
+            Event Handler for the RowUpdating Event raised by the DataAdapters
+            </summary>
+        </member>
+        <member name="T:amlak.DataAccess.Adapters.RowUpdatedEventHandler">
+            <summary>
+            Event Handler for the RowUpdated Event raised by the DataAdapters
+            </summary>
+        </member>
+        <member name="T:amlak.DataAccess.Adapters.memariDataAdapter">
+            <summary>
+            memariDataAdapter allows for application specific data operations to be added without 
+            having to make changes to the auto-generated memariDataAdapterBase class. 
+            <seealso cref="T:amlak.DataAccess.Adapters.Base.memariDataAdapterBase"/>
+            </summary>
+            <remarks>
+            Any modifications must be made to the memariDataAdapter class.
+            <br/><br/>
+            This class was automatically generated by Rad Software NextGeneration <a href="http://www.radsoftware.com.au">http://www.radsoftware.com.au</a>
+            </remarks>
+        </member>
+        <member name="F:amlak.DataAccess.Adapters.memariDataAdapter.m_Instance">
+            <summary>
+            A static instance of the memariDataAdapter
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.memariDataAdapter.#ctor(RAD.AppFramework.Data.DatabaseConnection)">
+            <summary>
+            Creates a new memariDataAdapter 
+            that uses the specified DatabaseConnection
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.memariDataAdapter.#ctor">
+            <summary>
+            Creates a new memariDataAdapter 
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.memariDataAdapter.#cctor">
+            <summary>
+            Initializes the static instance
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Adapters.memariDataAdapter.Instance">
+            <summary>
+            A default instance of the memariDataAdapter
+            </summary>
+        </member>
+        <member name="T:amlak.DataAccess.Adapters.noeDataAdapter">
+            <summary>
+            noeDataAdapter allows for application specific data operations to be added without 
+            having to make changes to the auto-generated noeDataAdapterBase class. 
+            <seealso cref="T:amlak.DataAccess.Adapters.Base.noeDataAdapterBase"/>
+            </summary>
+            <remarks>
+            Any modifications must be made to the noeDataAdapter class.
+            <br/><br/>
+            This class was automatically generated by Rad Software NextGeneration <a href="http://www.radsoftware.com.au">http://www.radsoftware.com.au</a>
+            </remarks>
+        </member>
+        <member name="F:amlak.DataAccess.Adapters.noeDataAdapter.m_Instance">
+            <summary>
+            A static instance of the noeDataAdapter
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.noeDataAdapter.#ctor(RAD.AppFramework.Data.DatabaseConnection)">
+            <summary>
+            Creates a new noeDataAdapter 
+            that uses the specified DatabaseConnection
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.noeDataAdapter.#ctor">
+            <summary>
+            Creates a new noeDataAdapter 
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.noeDataAdapter.#cctor">
+            <summary>
+            Initializes the static instance
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Adapters.noeDataAdapter.Instance">
+            <summary>
+            A default instance of the noeDataAdapter
+            </summary>
+        </member>
+        <member name="T:amlak.DataAccess.Adapters.sazehDataAdapter">
+            <summary>
+            sazehDataAdapter allows for application specific data operations to be added without 
+            having to make changes to the auto-generated sazehDataAdapterBase class. 
+            <seealso cref="T:amlak.DataAccess.Adapters.Base.sazehDataAdapterBase"/>
+            </summary>
+            <remarks>
+            Any modifications must be made to the sazehDataAdapter class.
+            <br/><br/>
+            This class was automatically generated by Rad Software NextGeneration <a href="http://www.radsoftware.com.au">http://www.radsoftware.com.au</a>
+            </remarks>
+        </member>
+        <member name="F:amlak.DataAccess.Adapters.sazehDataAdapter.m_Instance">
+            <summary>
+            A static instance of the sazehDataAdapter
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.sazehDataAdapter.#ctor(RAD.AppFramework.Data.DatabaseConnection)">
+            <summary>
+            Creates a new sazehDataAdapter 
+            that uses the specified DatabaseConnection
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.sazehDataAdapter.#ctor">
+            <summary>
+            Creates a new sazehDataAdapter 
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Adapters.sazehDataAdapter.#cctor">
+            <summary>
+            Initializes the static instance
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Adapters.sazehDataAdapter.Instance">
+            <summary>
+            A default instance of the sazehDataAdapter
+            </summary>
+        </member>
+        <member name="T:amlak.DataAccess.Readers.Base.divar_dakli_glbDataReaderBase">
+            <summary>
+            Base class for the divar_dakli_glbDataReader
+            <seealso cref="T:amlak.DataAccess.Readers.divar_dakli_glbDataReader"/>
+            </summary>
+            <remarks>
+            Provides forward-only read access to the divar_dakli_glb table.
+            
+            This class has been auto-generated and should not be modified. Any modifications should
+            be made to the <see cref="T:amlak.DataAccess.Readers.divar_dakli_glbDataReader">divar_dakli_glbDataReader</see> class.
+            <br/><br/>
+            This class was automatically generated by Rad Software NextGeneration <a href="http://www.radsoftware.com.au">http://www.radsoftware.com.au</a>
+            </remarks>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.divar_dakli_glbDataReaderBase.m_szh_idOrdinal">
+            <summary>The ordinal position of the szh_id column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.divar_dakli_glbDataReaderBase.m_divar_dakli_glb_idOrdinal">
+            <summary>The ordinal position of the divar_dakli_glb_id column in the result set</summary>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.divar_dakli_glbDataReaderBase.#ctor">
+            <summary>
+            Creates a new divar_dakli_glbDataReaderBase
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.divar_dakli_glbDataReaderBase.SetColumnOrdinals">
+            <summary>
+            Sets the indexes of the columns within the result set
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.divar_dakli_glbDataReaderBase.SelectAll">
+            <summary>
+            Selects all rows from the divar_dakli_glb table
+            </summary>
+            <returns>true on success, false otherwise</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.divar_dakli_glbDataReaderBase.SelectByQuery(RAD.AppFramework.QueryObjects.Query)">
+            <summary>
+            Selects rows from the divar_dakli_glb table by Query definion
+            </summary>
+            <param name="queryDefinition">A Query object that defines the Query used to select rows from the database</param>
+            <returns>true on success, false otherwise</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.divar_dakli_glbDataReaderBase.SelectByszh_idAnddivar_dakli_glb_id(System.Int32,System.Int32)">
+            <summary>
+            Selects rows from the divar_dakli_glb table by Primary Key (szh_id, divar_dakli_glb_id)
+            </summary>
+            <param name="szh_id">The szh_id to use as search criteria</param>
+            <param name="divar_dakli_glb_id">The divar_dakli_glb_id to use as search criteria</param>
+            <returns>true on success, false otherwise</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.divar_dakli_glbDataReaderBase.SelectBydivar_dakli_glb_id(System.Int32)">
+            <summary>
+            Selects rows from the divar_dakli_glb table by divar_dakli_glb_id
+            </summary>
+            <param name="divar_dakli_glb_id">The divar_dakli_glb_id to use as search criteria</param>
+            <returns>true on success, false otherwise</returns>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.divar_dakli_glbDataReaderBase.szh_id">
+            <summary>
+            Returns the value of the szh_id column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.divar_dakli_glbDataReaderBase.divar_dakli_glb_id">
+            <summary>
+            Returns the value of the divar_dakli_glb_id column for the current row
+            </summary>
+        </member>
+        <member name="T:amlak.DataAccess.Readers.Base.memariDataReaderBase">
+            <summary>
+            Base class for the memariDataReader
+            <seealso cref="T:amlak.DataAccess.Readers.memariDataReader"/>
+            </summary>
+            <remarks>
+            Provides forward-only read access to the memari table.
+            
+            This class has been auto-generated and should not be modified. Any modifications should
+            be made to the <see cref="T:amlak.DataAccess.Readers.memariDataReader">memariDataReader</see> class.
+            <br/><br/>
+            This class was automatically generated by Rad Software NextGeneration <a href="http://www.radsoftware.com.au">http://www.radsoftware.com.au</a>
+            </remarks>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.memariDataReaderBase.m_MemariIDOrdinal">
+            <summary>The ordinal position of the MemariID column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.memariDataReaderBase.m_ReshtehIDOrdinal">
+            <summary>The ordinal position of the ReshtehID column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.memariDataReaderBase.m_ModiriatIDOrdinal">
+            <summary>The ordinal position of the ModiriatID column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.memariDataReaderBase.m_ShahrestanIDOrdinal">
+            <summary>The ordinal position of the ShahrestanID column in the result set</summary>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.memariDataReaderBase.#ctor">
+            <summary>
+            Creates a new memariDataReaderBase
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.memariDataReaderBase.SetColumnOrdinals">
+            <summary>
+            Sets the indexes of the columns within the result set
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.memariDataReaderBase.SelectAll">
+            <summary>
+            Selects all rows from the memari table
+            </summary>
+            <returns>true on success, false otherwise</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.memariDataReaderBase.SelectByQuery(RAD.AppFramework.QueryObjects.Query)">
+            <summary>
+            Selects rows from the memari table by Query definion
+            </summary>
+            <param name="queryDefinition">A Query object that defines the Query used to select rows from the database</param>
+            <returns>true on success, false otherwise</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.memariDataReaderBase.SelectByMemariID(System.Int32)">
+            <summary>
+            Selects rows from the memari table by Primary Key (MemariID)
+            </summary>
+            <param name="MemariID">The MemariID to use as search criteria</param>
+            <returns>true on success, false otherwise</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.memariDataReaderBase.IsModiriatIDNull">
+            <summary>
+            Checks if the value of the ModiriatID column is NULL
+            </summary>
+            <returns>true if ModiriatID is NULL, false if it is not NULL</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.memariDataReaderBase.IsShahrestanIDNull">
+            <summary>
+            Checks if the value of the ShahrestanID column is NULL
+            </summary>
+            <returns>true if ShahrestanID is NULL, false if it is not NULL</returns>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.memariDataReaderBase.MemariID">
+            <summary>
+            Returns the value of the MemariID column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.memariDataReaderBase.ReshtehID">
+            <summary>
+            Returns the value of the ReshtehID column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.memariDataReaderBase.ModiriatID">
+            <summary>
+            Returns the value of the ModiriatID column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.memariDataReaderBase.ShahrestanID">
+            <summary>
+            Returns the value of the ShahrestanID column for the current row
+            </summary>
+        </member>
+        <member name="T:amlak.DataAccess.Readers.Base.noeDataReaderBase">
+            <summary>
+            Base class for the noeDataReader
+            <seealso cref="T:amlak.DataAccess.Readers.noeDataReader"/>
+            </summary>
+            <remarks>
+            Provides forward-only read access to the noe table.
+            
+            This class has been auto-generated and should not be modified. Any modifications should
+            be made to the <see cref="T:amlak.DataAccess.Readers.noeDataReader">noeDataReader</see> class.
+            <br/><br/>
+            This class was automatically generated by Rad Software NextGeneration <a href="http://www.radsoftware.com.au">http://www.radsoftware.com.au</a>
+            </remarks>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.noeDataReaderBase.m_noe_idOrdinal">
+            <summary>The ordinal position of the noe_id column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.noeDataReaderBase.m_noe_namOrdinal">
+            <summary>The ordinal position of the noe_nam column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.noeDataReaderBase.m_noe_clsOrdinal">
+            <summary>The ordinal position of the noe_cls column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.noeDataReaderBase.m_noe_toziOrdinal">
+            <summary>The ordinal position of the noe_tozi column in the result set</summary>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.noeDataReaderBase.#ctor">
+            <summary>
+            Creates a new noeDataReaderBase
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.noeDataReaderBase.SetColumnOrdinals">
+            <summary>
+            Sets the indexes of the columns within the result set
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.noeDataReaderBase.SelectAll">
+            <summary>
+            Selects all rows from the noe table
+            </summary>
+            <returns>true on success, false otherwise</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.noeDataReaderBase.SelectByQuery(RAD.AppFramework.QueryObjects.Query)">
+            <summary>
+            Selects rows from the noe table by Query definion
+            </summary>
+            <param name="queryDefinition">A Query object that defines the Query used to select rows from the database</param>
+            <returns>true on success, false otherwise</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.noeDataReaderBase.SelectBynoe_id(System.Int32)">
+            <summary>
+            Selects rows from the noe table by Primary Key (noe_id)
+            </summary>
+            <param name="noe_id">The noe_id to use as search criteria</param>
+            <returns>true on success, false otherwise</returns>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.noeDataReaderBase.noe_id">
+            <summary>
+            Returns the value of the noe_id column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.noeDataReaderBase.noe_nam">
+            <summary>
+            Returns the value of the noe_nam column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.noeDataReaderBase.noe_cls">
+            <summary>
+            Returns the value of the noe_cls column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.noeDataReaderBase.noe_tozi">
+            <summary>
+            Returns the value of the noe_tozi column for the current row
+            </summary>
+        </member>
+        <member name="T:amlak.DataAccess.Readers.Base.sazehDataReaderBase">
+            <summary>
+            Base class for the sazehDataReader
+            <seealso cref="T:amlak.DataAccess.Readers.sazehDataReader"/>
+            </summary>
+            <remarks>
+            Provides forward-only read access to the sazeh table.
+            
+            This class has been auto-generated and should not be modified. Any modifications should
+            be made to the <see cref="T:amlak.DataAccess.Readers.sazehDataReader">sazehDataReader</see> class.
+            <br/><br/>
+            This class was automatically generated by Rad Software NextGeneration <a href="http://www.radsoftware.com.au">http://www.radsoftware.com.au</a>
+            </remarks>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_szh_idOrdinal">
+            <summary>The ordinal position of the szh_id column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_mlk_idOrdinal">
+            <summary>The ordinal position of the mlk_id column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_rsht_idOrdinal">
+            <summary>The ordinal position of the rsht_id column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_modirt_idOrdinal">
+            <summary>The ordinal position of the modirt_id column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_shrstan_idOrdinal">
+            <summary>The ordinal position of the shrstan_id column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_shobh_idOrdinal">
+            <summary>The ordinal position of the shobh_id column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_fndsion_noe_idOrdinal">
+            <summary>The ordinal position of the fndsion_noe_id column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_fndsion_toziOrdinal">
+            <summary>The ordinal position of the fndsion_tozi column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_sgf_noe_idOrdinal">
+            <summary>The ordinal position of the sgf_noe_id column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_sgf_sayrOrdinal">
+            <summary>The ordinal position of the sgf_sayr column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_sgf_toziOrdinal">
+            <summary>The ordinal position of the sgf_tozi column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_sklt_noe_idOrdinal">
+            <summary>The ordinal position of the sklt_noe_id column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_sklt_toziOrdinal">
+            <summary>The ordinal position of the sklt_tozi column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_sklt_sayrOrdinal">
+            <summary>The ordinal position of the sklt_sayr column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_divar_karji_glb_idOrdinal">
+            <summary>The ordinal position of the divar_karji_glb_id column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_divar_dakli_glb_partitionOrdinal">
+            <summary>The ordinal position of the divar_dakli_glb_partition column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_divar_dakli_glb_simaniOrdinal">
+            <summary>The ordinal position of the divar_dakli_glb_simani column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_divar_dakli_glb_likaOrdinal">
+            <summary>The ordinal position of the divar_dakli_glb_lika column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_divar_dakli_glb_hblxOrdinal">
+            <summary>The ordinal position of the divar_dakli_glb_hblx column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_divar_dakli_glb_sofaliOrdinal">
+            <summary>The ordinal position of the divar_dakli_glb_sofali column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_divar_dakli_glb_pomaOrdinal">
+            <summary>The ordinal position of the divar_dakli_glb_poma column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_divar_dakli_glb_ajorOrdinal">
+            <summary>The ordinal position of the divar_dakli_glb_ajor column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_divar_dakli_glb_drywallOrdinal">
+            <summary>The ordinal position of the divar_dakli_glb_drywall column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_divar_dakli_glb_sayerOrdinal">
+            <summary>The ordinal position of the divar_dakli_glb_sayer column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_divar_dakli_glb_sayer_valOrdinal">
+            <summary>The ordinal position of the divar_dakli_glb_sayer_val column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_divar_dakli_glb_toziOrdinal">
+            <summary>The ordinal position of the divar_dakli_glb_tozi column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_thvil_tarikhOrdinal">
+            <summary>The ordinal position of the thvil_tarikh column in the result set</summary>
+        </member>
+        <member name="F:amlak.DataAccess.Readers.Base.sazehDataReaderBase.m_thvil_krshnasOrdinal">
+            <summary>The ordinal position of the thvil_krshnas column in the result set</summary>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.#ctor">
+            <summary>
+            Creates a new sazehDataReaderBase
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.SetColumnOrdinals">
+            <summary>
+            Sets the indexes of the columns within the result set
+            </summary>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.SelectAll">
+            <summary>
+            Selects all rows from the sazeh table
+            </summary>
+            <returns>true on success, false otherwise</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.SelectByQuery(RAD.AppFramework.QueryObjects.Query)">
+            <summary>
+            Selects rows from the sazeh table by Query definion
+            </summary>
+            <param name="queryDefinition">A Query object that defines the Query used to select rows from the database</param>
+            <returns>true on success, false otherwise</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.SelectByszh_id(System.Int32)">
+            <summary>
+            Selects rows from the sazeh table by Primary Key (szh_id)
+            </summary>
+            <param name="szh_id">The szh_id to use as search criteria</param>
+            <returns>true on success, false otherwise</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.SelectByfndsion_noe_id(System.Int32)">
+            <summary>
+            Selects rows from the sazeh table by fndsion_noe_id
+            </summary>
+            <param name="fndsion_noe_id">The fndsion_noe_id to use as search criteria</param>
+            <returns>true on success, false otherwise</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.SelectBysgf_noe_id(System.Int32)">
+            <summary>
+            Selects rows from the sazeh table by sgf_noe_id
+            </summary>
+            <param name="sgf_noe_id">The sgf_noe_id to use as search criteria</param>
+            <returns>true on success, false otherwise</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.SelectBysklt_noe_id(System.Int32)">
+            <summary>
+            Selects rows from the sazeh table by sklt_noe_id
+            </summary>
+            <param name="sklt_noe_id">The sklt_noe_id to use as search criteria</param>
+            <returns>true on success, false otherwise</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.SelectBydivar_karji_glb_id(System.Int32)">
+            <summary>
+            Selects rows from the sazeh table by divar_karji_glb_id
+            </summary>
+            <param name="divar_karji_glb_id">The divar_karji_glb_id to use as search criteria</param>
+            <returns>true on success, false otherwise</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.Ismlk_idNull">
+            <summary>
+            Checks if the value of the mlk_id column is NULL
+            </summary>
+            <returns>true if mlk_id is NULL, false if it is not NULL</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.Isshobh_idNull">
+            <summary>
+            Checks if the value of the shobh_id column is NULL
+            </summary>
+            <returns>true if shobh_id is NULL, false if it is not NULL</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.Isfndsion_toziNull">
+            <summary>
+            Checks if the value of the fndsion_tozi column is NULL
+            </summary>
+            <returns>true if fndsion_tozi is NULL, false if it is not NULL</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.Issgf_sayrNull">
+            <summary>
+            Checks if the value of the sgf_sayr column is NULL
+            </summary>
+            <returns>true if sgf_sayr is NULL, false if it is not NULL</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.Issgf_toziNull">
+            <summary>
+            Checks if the value of the sgf_tozi column is NULL
+            </summary>
+            <returns>true if sgf_tozi is NULL, false if it is not NULL</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.Issklt_toziNull">
+            <summary>
+            Checks if the value of the sklt_tozi column is NULL
+            </summary>
+            <returns>true if sklt_tozi is NULL, false if it is not NULL</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.Issklt_sayrNull">
+            <summary>
+            Checks if the value of the sklt_sayr column is NULL
+            </summary>
+            <returns>true if sklt_sayr is NULL, false if it is not NULL</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.Isdivar_dakli_glb_partitionNull">
+            <summary>
+            Checks if the value of the divar_dakli_glb_partition column is NULL
+            </summary>
+            <returns>true if divar_dakli_glb_partition is NULL, false if it is not NULL</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.Isdivar_dakli_glb_simaniNull">
+            <summary>
+            Checks if the value of the divar_dakli_glb_simani column is NULL
+            </summary>
+            <returns>true if divar_dakli_glb_simani is NULL, false if it is not NULL</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.Isdivar_dakli_glb_likaNull">
+            <summary>
+            Checks if the value of the divar_dakli_glb_lika column is NULL
+            </summary>
+            <returns>true if divar_dakli_glb_lika is NULL, false if it is not NULL</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.Isdivar_dakli_glb_hblxNull">
+            <summary>
+            Checks if the value of the divar_dakli_glb_hblx column is NULL
+            </summary>
+            <returns>true if divar_dakli_glb_hblx is NULL, false if it is not NULL</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.Isdivar_dakli_glb_sofaliNull">
+            <summary>
+            Checks if the value of the divar_dakli_glb_sofali column is NULL
+            </summary>
+            <returns>true if divar_dakli_glb_sofali is NULL, false if it is not NULL</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.Isdivar_dakli_glb_pomaNull">
+            <summary>
+            Checks if the value of the divar_dakli_glb_poma column is NULL
+            </summary>
+            <returns>true if divar_dakli_glb_poma is NULL, false if it is not NULL</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.Isdivar_dakli_glb_ajorNull">
+            <summary>
+            Checks if the value of the divar_dakli_glb_ajor column is NULL
+            </summary>
+            <returns>true if divar_dakli_glb_ajor is NULL, false if it is not NULL</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.Isdivar_dakli_glb_drywallNull">
+            <summary>
+            Checks if the value of the divar_dakli_glb_drywall column is NULL
+            </summary>
+            <returns>true if divar_dakli_glb_drywall is NULL, false if it is not NULL</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.Isdivar_dakli_glb_sayerNull">
+            <summary>
+            Checks if the value of the divar_dakli_glb_sayer column is NULL
+            </summary>
+            <returns>true if divar_dakli_glb_sayer is NULL, false if it is not NULL</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.Isdivar_dakli_glb_sayer_valNull">
+            <summary>
+            Checks if the value of the divar_dakli_glb_sayer_val column is NULL
+            </summary>
+            <returns>true if divar_dakli_glb_sayer_val is NULL, false if it is not NULL</returns>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.Base.sazehDataReaderBase.Isdivar_dakli_glb_toziNull">
+            <summary>
+            Checks if the value of the divar_dakli_glb_tozi column is NULL
+            </summary>
+            <returns>true if divar_dakli_glb_tozi is NULL, false if it is not NULL</returns>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.szh_id">
+            <summary>
+            Returns the value of the szh_id column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.mlk_id">
+            <summary>
+            Returns the value of the mlk_id column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.rsht_id">
+            <summary>
+            Returns the value of the rsht_id column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.modirt_id">
+            <summary>
+            Returns the value of the modirt_id column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.shrstan_id">
+            <summary>
+            Returns the value of the shrstan_id column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.shobh_id">
+            <summary>
+            Returns the value of the shobh_id column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.fndsion_noe_id">
+            <summary>
+            Returns the value of the fndsion_noe_id column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.fndsion_tozi">
+            <summary>
+            Returns the value of the fndsion_tozi column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.sgf_noe_id">
+            <summary>
+            Returns the value of the sgf_noe_id column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.sgf_sayr">
+            <summary>
+            Returns the value of the sgf_sayr column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.sgf_tozi">
+            <summary>
+            Returns the value of the sgf_tozi column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.sklt_noe_id">
+            <summary>
+            Returns the value of the sklt_noe_id column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.sklt_tozi">
+            <summary>
+            Returns the value of the sklt_tozi column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.sklt_sayr">
+            <summary>
+            Returns the value of the sklt_sayr column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.divar_karji_glb_id">
+            <summary>
+            Returns the value of the divar_karji_glb_id column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.divar_dakli_glb_partition">
+            <summary>
+            Returns the value of the divar_dakli_glb_partition column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.divar_dakli_glb_simani">
+            <summary>
+            Returns the value of the divar_dakli_glb_simani column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.divar_dakli_glb_lika">
+            <summary>
+            Returns the value of the divar_dakli_glb_lika column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.divar_dakli_glb_hblx">
+            <summary>
+            Returns the value of the divar_dakli_glb_hblx column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.divar_dakli_glb_sofali">
+            <summary>
+            Returns the value of the divar_dakli_glb_sofali column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.divar_dakli_glb_poma">
+            <summary>
+            Returns the value of the divar_dakli_glb_poma column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.divar_dakli_glb_ajor">
+            <summary>
+            Returns the value of the divar_dakli_glb_ajor column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.divar_dakli_glb_drywall">
+            <summary>
+            Returns the value of the divar_dakli_glb_drywall column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.divar_dakli_glb_sayer">
+            <summary>
+            Returns the value of the divar_dakli_glb_sayer column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.divar_dakli_glb_sayer_val">
+            <summary>
+            Returns the value of the divar_dakli_glb_sayer_val column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.divar_dakli_glb_tozi">
+            <summary>
+            Returns the value of the divar_dakli_glb_tozi column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.thvil_tarikh">
+            <summary>
+            Returns the value of the thvil_tarikh column for the current row
+            </summary>
+        </member>
+        <member name="P:amlak.DataAccess.Readers.Base.sazehDataReaderBase.thvil_krshnas">
+            <summary>
+            Returns the value of the thvil_krshnas column for the current row
+            </summary>
+        </member>
+        <member name="T:amlak.DataAccess.Readers.divar_dakli_glbDataReader">
+            <summary>
+            Provides forward-only read access to the divar_dakli_glb table.
+            <seealso cref="T:amlak.DataAccess.Readers.Base.divar_dakli_glbDataReaderBase"/>
+            </summary>
+            <remarks>
+            This class was automatically generated by Rad Software NextGeneration <a href="http://www.radsoftware.com.au">http://www.radsoftware.com.au</a>
+            </remarks>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.divar_dakli_glbDataReader.#ctor">
+            <summary>
+            Creates a new divar_dakli_glbDataReader
+            </summary>
+        </member>
+        <member name="T:amlak.DataAccess.Readers.memariDataReader">
+            <summary>
+            Provides forward-only read access to the memari table.
+            <seealso cref="T:amlak.DataAccess.Readers.Base.memariDataReaderBase"/>
+            </summary>
+            <remarks>
+            This class was automatically generated by Rad Software NextGeneration <a href="http://www.radsoftware.com.au">http://www.radsoftware.com.au</a>
+            </remarks>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.memariDataReader.#ctor">
+            <summary>
+            Creates a new memariDataReader
+            </summary>
+        </member>
+        <member name="T:amlak.DataAccess.Readers.noeDataReader">
+            <summary>
+            Provides forward-only read access to the noe table.
+            <seealso cref="T:amlak.DataAccess.Readers.Base.noeDataReaderBase"/>
+            </summary>
+            <remarks>
+            This class was automatically generated by Rad Software NextGeneration <a href="http://www.radsoftware.com.au">http://www.radsoftware.com.au</a>
+            </remarks>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.noeDataReader.#ctor">
+            <summary>
+            Creates a new noeDataReader
+            </summary>
+        </member>
+        <member name="T:amlak.DataAccess.Readers.sazehDataReader">
+            <summary>
+            Provides forward-only read access to the sazeh table.
+            <seealso cref="T:amlak.DataAccess.Readers.Base.sazehDataReaderBase"/>
+            </summary>
+            <remarks>
+            This class was automatically generated by Rad Software NextGeneration <a href="http://www.radsoftware.com.au">http://www.radsoftware.com.au</a>
+            </remarks>
+        </member>
+        <member name="M:amlak.DataAccess.Readers.sazehDataReader.#ctor">
+            <summary>
+            Creates a new sazehDataReader
+            </summary>
+        </member>
+    </members>
+</doc>

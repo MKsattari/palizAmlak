@@ -1,0 +1,10 @@
+C:\Users\gholami\Desktop\amlak\Data\bin\Debug\amlak.Data.dll
+C:\Users\gholami\Desktop\amlak\Data\bin\Debug\amlak.Data.pdb
+C:\Users\gholami\Desktop\amlak\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+C:\Users\gholami\Desktop\amlak\Data\obj\Debug\amlak.Data.dll
+C:\Users\gholami\Desktop\amlak\Data\obj\Debug\amlak.Data.pdb
+E:\Paliz\amlak\Data\bin\Debug\amlak.Data.dll
+E:\Paliz\amlak\Data\bin\Debug\amlak.Data.pdb
+E:\Paliz\amlak\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+E:\Paliz\amlak\Data\obj\Debug\amlak.Data.dll
+E:\Paliz\amlak\Data\obj\Debug\amlak.Data.pdb

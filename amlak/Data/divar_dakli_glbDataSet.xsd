@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="divar_dakli_glbDataSet" targetNamespace="http://tempuri.org/divar_dakli_glbDataSet.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/divar_dakli_glbDataSet.xsd" xmlns:mstns="http://tempuri.org/divar_dakli_glbDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"  xmlns:mscodegen="urn:schemas-microsoft-com:xml-msprop">
+	<xs:element name="divar_dakli_glbDataSet" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="divar_dakli_glb">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="szh_x005F_id" type="xs:int" minOccurs="1" msdata:Caption="Szh Id" mscodegen:typedName="szh_id" />
+							<xs:element name="divar_x005F_dakli_x005F_glb_x005F_id" type="xs:int" minOccurs="1" msdata:Caption="Divar Dakli Glb Id" mscodegen:typedName="divar_dakli_glb_id" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:key name="divar_dakli_glbDataSetKey1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:divar_dakli_glb" />
+			<xs:field xpath="mstns:szh_x005F_id" />
+			<xs:field xpath="mstns:divar_x005F_dakli_x005F_glb_x005F_id" />
+		</xs:key>
+	</xs:element>
+</xs:schema>

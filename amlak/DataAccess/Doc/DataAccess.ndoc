@@ -1,0 +1,111 @@
+<project>
+  <assemblies>
+    <assembly location="..\bin\Debug\amlak.DataAccess.dll" documentation="..\bin\Debug\amlak.DataAccess.xml" />
+  </assemblies>
+  <namespaces>
+    <namespace name="amlak.DataAccess">
+    </namespace>
+    <namespace name="amlak.DataAccess.Base">
+    </namespace>
+  </namespaces>
+  <documenters>
+    <documenter name="JavaDoc">
+      <property name="OutputDirectory" value=".\JavaDoc\" />
+      <property name="ShowMissingSummaries" value="False" />
+      <property name="ShowMissingRemarks" value="False" />
+      <property name="ShowMissingParams" value="False" />
+      <property name="ShowMissingReturns" value="False" />
+      <property name="ShowMissingValues" value="False" />
+      <property name="DocumentInternals" value="False" />
+      <property name="DocumentProtected" value="True" />
+      <property name="DocumentPrivates" value="False" />
+      <property name="DocumentEmptyNamespaces" value="False" />
+      <property name="IncludeAssemblyVersion" value="False" />
+      <property name="CopyrightText" value="" />
+      <property name="CopyrightHref" value="" />
+      <property name="SkipNamespacesWithoutSummaries" value="False" />
+      <property name="AutoPropertyBackerSummaries" value="False" />
+      <property name="AutoDocumentConstructors" value="True" />
+      <property name="DocumentAttributes" value="False" />
+      <property name="DocumentedAttributes" value="" />
+      <property name="GetExternalSummaries" value="True" />
+    </documenter>
+    <documenter name="Latex">
+      <property name="OutputDirectory" value="Tex" />
+      <property name="TextFileFullName" value="amlak.tex" />
+      <property name="TexFileBaseName" value="amlak" />
+      <property name="LatexCompiler" value="latex" />
+      <property name="TexFileFullPath" value="Tex\amlak.tex" />
+      <property name="ShowMissingSummaries" value="False" />
+      <property name="ShowMissingRemarks" value="False" />
+      <property name="ShowMissingParams" value="False" />
+      <property name="ShowMissingReturns" value="False" />
+      <property name="ShowMissingValues" value="False" />
+      <property name="DocumentInternals" value="False" />
+      <property name="DocumentProtected" value="True" />
+      <property name="DocumentPrivates" value="False" />
+      <property name="DocumentEmptyNamespaces" value="False" />
+      <property name="IncludeAssemblyVersion" value="False" />
+      <property name="CopyrightText" value="" />
+      <property name="CopyrightHref" value="" />
+      <property name="SkipNamespacesWithoutSummaries" value="False" />
+      <property name="AutoPropertyBackerSummaries" value="False" />
+      <property name="AutoDocumentConstructors" value="True" />
+      <property name="DocumentAttributes" value="False" />
+      <property name="DocumentedAttributes" value="" />
+      <property name="GetExternalSummaries" value="True" />
+    </documenter>
+    <documenter name="MSDN">
+      <property name="OutputDirectory" value=".\NDoc\" />
+      <property name="HtmlHelpName" value="amlak.DataAccessLayer" />
+      <property name="IncludeFavorites" value="False" />
+      <property name="Title" value="Rad Software NextGeneration DataAccess Layer" />
+      <property name="SplitTOCs" value="False" />
+      <property name="DefaulTOC" value="" />
+      <property name="IncludeHierarchy" value="False" />
+      <property name="ShowVisualBasic" value="False" />
+      <property name="OmitObjectTags" value="False" />
+      <property name="SortTOCByNamespace" value="True" />
+      <property name="ShowMissingSummaries" value="False" />
+      <property name="ShowMissingRemarks" value="False" />
+      <property name="ShowMissingParams" value="False" />
+      <property name="ShowMissingReturns" value="False" />
+      <property name="ShowMissingValues" value="False" />
+      <property name="DocumentInternals" value="False" />
+      <property name="DocumentProtected" value="True" />
+      <property name="DocumentPrivates" value="False" />
+      <property name="DocumentEmptyNamespaces" value="False" />
+      <property name="IncludeAssemblyVersion" value="False" />
+      <property name="CopyrightText" value="Copyright (c) Ross Donald - RAD Software" />
+      <property name="CopyrightHref" value="http://www.radsoftware.com.au" />
+      <property name="ReferencesPath" value=".." />
+      <property name="SkipNamespacesWithoutSummaries" value="False" />
+      <property name="AutoPropertyBackerSummaries" value="False" />
+      <property name="AutoDocumentConstructors" value="True" />
+      <property name="DocumentAttributes" value="False" />
+      <property name="DocumentedAttributes" value="" />
+      <property name="GetExternalSummaries" value="True" />
+    </documenter>
+    <documenter name="XML">
+      <property name="OutputFile" value=".\NDocXML\amlak.DataAccess.NDoc.xml" />
+      <property name="ShowMissingSummaries" value="False" />
+      <property name="ShowMissingRemarks" value="False" />
+      <property name="ShowMissingParams" value="False" />
+      <property name="ShowMissingReturns" value="False" />
+      <property name="ShowMissingValues" value="False" />
+      <property name="DocumentInternals" value="False" />
+      <property name="DocumentProtected" value="True" />
+      <property name="DocumentPrivates" value="False" />
+      <property name="DocumentEmptyNamespaces" value="False" />
+      <property name="IncludeAssemblyVersion" value="False" />
+      <property name="CopyrightText" value="" />
+      <property name="CopyrightHref" value="" />
+      <property name="SkipNamespacesWithoutSummaries" value="False" />
+      <property name="AutoPropertyBackerSummaries" value="False" />
+      <property name="AutoDocumentConstructors" value="True" />
+      <property name="DocumentAttributes" value="False" />
+      <property name="DocumentedAttributes" value="" />
+      <property name="GetExternalSummaries" value="True" />
+    </documenter>
+  </documenters>
+</project>

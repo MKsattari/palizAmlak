@@ -1,0 +1,5 @@
+C:\Users\gholami\Desktop\amlak\Database\bin\Debug\Database.dacpac
+C:\Users\gholami\Desktop\amlak\Database\bin\Debug\dbpProjectName.dll
+C:\Users\gholami\Desktop\amlak\Database\bin\Debug\dbpProjectName.pdb
+C:\Users\gholami\Desktop\amlak\Database\obj\Debug\dbpProjectName.dll
+C:\Users\gholami\Desktop\amlak\Database\obj\Debug\dbpProjectName.pdb

@@ -1,0 +1,11 @@
+C:\Users\gholami\Desktop\amlak\DataAccess\bin\Debug\amlak.DataAccess.dll
+C:\Users\gholami\Desktop\amlak\DataAccess\bin\Debug\amlak.DataAccess.pdb
+C:\Users\gholami\Desktop\amlak\DataAccess\bin\Debug\amlak.DataAccess.xml
+C:\Users\gholami\Desktop\amlak\DataAccess\bin\Debug\amlak.Common.dll
+C:\Users\gholami\Desktop\amlak\DataAccess\bin\Debug\Rad.AppFramework.dll
+C:\Users\gholami\Desktop\amlak\DataAccess\bin\Debug\amlak.Common.pdb
+C:\Users\gholami\Desktop\amlak\DataAccess\bin\Debug\amlak.Common.xml
+C:\Users\gholami\Desktop\amlak\DataAccess\bin\Debug\Rad.AppFramework.xml
+C:\Users\gholami\Desktop\amlak\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\gholami\Desktop\amlak\DataAccess\obj\Debug\amlak.DataAccess.dll
+C:\Users\gholami\Desktop\amlak\DataAccess\obj\Debug\amlak.DataAccess.pdb

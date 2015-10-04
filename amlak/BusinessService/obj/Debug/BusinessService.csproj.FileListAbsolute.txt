@@ -1,0 +1,16 @@
+C:\Users\gholami\Desktop\amlak\BusinessService\bin\Debug\amlak.BusinessService.dll
+C:\Users\gholami\Desktop\amlak\BusinessService\bin\Debug\amlak.BusinessService.pdb
+C:\Users\gholami\Desktop\amlak\BusinessService\bin\Debug\amlak.BusinessService.xml
+C:\Users\gholami\Desktop\amlak\BusinessService\bin\Debug\amlak.Common.dll
+C:\Users\gholami\Desktop\amlak\BusinessService\bin\Debug\amlak.Data.dll
+C:\Users\gholami\Desktop\amlak\BusinessService\bin\Debug\amlak.DataAccess.dll
+C:\Users\gholami\Desktop\amlak\BusinessService\bin\Debug\Rad.AppFramework.dll
+C:\Users\gholami\Desktop\amlak\BusinessService\bin\Debug\amlak.Common.pdb
+C:\Users\gholami\Desktop\amlak\BusinessService\bin\Debug\amlak.Common.xml
+C:\Users\gholami\Desktop\amlak\BusinessService\bin\Debug\amlak.DataAccess.pdb
+C:\Users\gholami\Desktop\amlak\BusinessService\bin\Debug\amlak.DataAccess.xml
+C:\Users\gholami\Desktop\amlak\BusinessService\bin\Debug\amlak.Data.pdb
+C:\Users\gholami\Desktop\amlak\BusinessService\bin\Debug\Rad.AppFramework.xml
+C:\Users\gholami\Desktop\amlak\BusinessService\obj\Debug\BusinessService.csprojResolveAssemblyReference.cache
+C:\Users\gholami\Desktop\amlak\BusinessService\obj\Debug\amlak.BusinessService.dll
+C:\Users\gholami\Desktop\amlak\BusinessService\obj\Debug\amlak.BusinessService.pdb

@@ -1,0 +1,9 @@
+[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
+Begin Query = "divar_dakli_glb.dtq"
+   Begin RunProperties = 
+      SQL = "SELECT [divar_dakli_glb].* FROM [divar_dakli_glb]"
+      ParamPrefix = ""
+      ParamSuffix = ""
+      ParamEscape = "\"
+   End
+End

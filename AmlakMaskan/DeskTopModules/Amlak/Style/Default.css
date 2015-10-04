@@ -1,0 +1,397 @@
+/* PeterBlum.com validators stylesheet */
+@import url(VAM/Appearance/VAMStyleSheet.css);
+/* Remove these lines if not using peterblum validators */
+
+/*
+** General Styles
+*/
+BODY, P
+{
+	font-size: smaller;
+	margin: 0px;
+	font-family: Verdana, Arial, Helvetica;
+}
+
+H1
+{
+	font-size: medium;
+	color: dimgray;
+	font-family: Verdana, Arial, Helvetica;
+	text-align: center;
+}
+
+/*
+** Data Entry Page
+*/
+TABLE.DataEntryForm
+{
+	font-size: 80%;
+	border-collapse: collapse;
+	background-color: lavender;
+}
+
+/*
+** The Title bar of a Data Entry Page
+*/
+TR.DataEntryTitle
+{
+	font-size: 120%;
+	font-weight: bold;
+	color: whitesmoke;
+	letter-spacing: 0.1em;
+	background-color: #284a67;
+	text-align: left;
+}
+
+TR.DataEntryTitle TH
+{
+	border-top: dimgray 1px solid;
+	padding-bottom: 0.3em;
+	padding-top: 0.3em;
+}
+
+TR.DataEntryFooter TD
+{
+	padding-bottom: 0.2em;
+	border-bottom: #284a67 thin solid;
+}
+
+TR.DataEntryFooter INPUT.Button
+{
+	width: 100px;
+}
+
+/*
+** A non-editable data entry control
+*/
+SPAN.DataEntry
+{
+}
+
+/*
+** The status message that is displayed on error or when the row is saved
+*/
+.DataEntryFormMessage
+{
+	color: orangered;
+}
+
+/*
+** Validation Messages and Summary
+*/
+.MsgVal, .MsgValSummary
+{
+	font-size: x-small;
+	color: orangered;
+}
+
+/*
+** Data Entry Form
+*/
+SPAN.RequiredFieldMark
+{
+	color: orangered;
+}
+
+SPAN.FieldCaption
+{
+}
+
+/*
+** Data entry controls 
+*/
+.DataEntry
+{
+	font-family: Tahoma, Verdana, Arial, Sans-Serif;
+}
+
+/*
+** Search page styles
+*/
+TABLE.SearchForm
+{
+	font-size: 80%;
+	border-collapse: collapse;
+	background-color: lavender;
+}
+
+TR.SearchTitle
+{
+	font-size: 120%;
+	font-weight: bold;
+	color: whitesmoke;
+	letter-spacing: 0.1em;
+	background-color: #284a67;
+	text-align: left;
+}
+
+TR.SearchTitle TH
+{
+	border-top: dimgray 1px solid;
+	padding-bottom: 0.3em;
+	padding-top: 0.3em;
+}
+
+TR.SearchFooter TD
+{
+	padding-bottom: 0.2em;
+	border-bottom: #284a67 thin solid;
+}
+
+TR.Criteria
+{
+}
+
+TR.SearchFooter INPUT.Button
+{
+	width: 100px;
+}
+
+
+
+/*
+** DataGrid TABLE
+*/
+TABLE.DataGrid
+{
+	border-right: steelblue 1px solid;
+	border-top: steelblue 1px solid;
+	font-size: x-small;
+	border-left: steelblue 1px solid;
+	border-bottom: steelblue 1px solid;
+	background-color: ghostwhite;
+}
+
+/*
+** DataGrid Header Row
+*/
+TR.DataGridHeader
+{
+	font-weight: bolder;
+	color: ghostwhite;
+	background-color: steelblue;
+}
+
+TR.DataGridHeader A
+{
+	color: ghostwhite;
+	text-decoration: none;
+}
+
+TR.DataGridHeader A:hover
+{
+	text-decoration: underline;
+}
+
+/*
+** DataGrid SubHeader Row
+*/
+TR.DataGridHeaderSub, TR.DataGridHeaderSub TD
+{
+	border-top: steelblue 1px solid;
+	background-color: gainsboro;
+}
+
+/*
+** DataGrid Footer Row
+*/
+TR.DataGridFooter
+{
+	color: steelblue;
+	background-color: whitesmoke;
+}
+
+/*
+** DataGrid Pager Row at the bottom of the datagrid if paging is enabled
+*/
+TR.DataGridPager
+{
+	border-right: steelblue 1px solid;
+	border-top: steelblue 1px solid;
+	border-left: steelblue 1px solid;
+	color: steelblue;
+	border-bottom: steelblue 1px solid;
+	background-color: whitesmoke;
+}
+
+/*
+** DataGrid Normal Row
+*/
+TR.DataGridItem
+{
+	background-color: ghostwhite;
+}
+
+/*
+** DataGrid Alternate Row - every second row
+*/
+TR.DataGridItemAlt
+{
+	background-color: #ece9d8;
+}
+
+/*
+** DataGrid Selected Row
+*/
+TR.DataGridItemSelected
+{
+	font-weight: bold;
+	color: whitesmoke;
+	background-color: steelblue;
+}
+
+/*
+** Special Formatting for links on the selected row on the DataGrid
+*/
+TR.DataGridItemSelected A:link, TR.DataGridItemSelected A:visited
+{
+	color: whitesmoke;
+}
+
+TR.DataGridItemSelected A:hover
+{
+	color: white;
+}
+
+/*
+** DataGrid Row being edited
+*/
+TR.DataGridItemEdit
+{
+	background-color: #E1DFC6;
+}
+
+/*
+** borders for the DataGrid Header have to be applied to the Cells (not the row)
+*/
+TR .DataGridHeader TD
+{
+	border-bottom: steelblue 1px solid;
+}
+
+TR .DataGridPager TD
+{
+	border-top: steelblue 1px solid;
+}
+
+
+
+/*
+** Layout Styles
+*/
+#HeadingTable
+{
+	border-left: 10px solid #1958b7;
+	border-right: 10px solid #508fc4;
+	border-bottom: 1px solid #508fc4;
+}
+
+.SiteHeading
+{
+	background-color: #2175bc;
+}
+
+.SiteLogo
+{
+	width: 130px;
+}
+
+.SiteTitle
+{
+}
+
+.SiteTitle H1
+{
+	padding-bottom: 0;
+	margin-bottom: 0;
+	padding-top: 1em;
+	padding-bottom: 0.2em;
+	font-size: medium;
+	color: #fff;
+}
+
+#ContentArea
+{
+	border-right: fuchsia thin solid;
+	border-top: fuchsia thin solid;
+	border-left: fuchsia thin solid;
+	border-bottom: fuchsia thin solid;
+}
+
+
+/* based on menu from - http://www.alistapart.com/articles/taminglists */
+#Menu
+{
+	padding-right: 0px;
+	padding-left: 0px;
+	font-size: x-small;
+	float: left;
+	margin-bottom: 1em;
+	padding-bottom: 0.5em;
+	width: 140px;
+	color: #333333;
+	padding-top: 0px;
+	background-color: #90bade;
+}
+
+#Menu ul
+{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+#Menu li
+{
+	border-bottom: 1px solid #90bade;
+	margin: 0;
+}
+
+#Menu li a
+{
+	display: block;
+	padding: 5px 5px 5px 0.5em;
+	border-left: 10px solid #1958b7;
+	border-right: 10px solid #508fc4;
+	background-color: #2175bc;
+	color: #fff;
+	text-decoration: none;
+	width: 100%;
+	border-bottom: 1px solid #508fc4;
+}
+
+html > body #Menu li a
+{
+	width: auto;
+}
+
+#Menu li a:hover
+{
+	border-left: 10px solid #1c64d1;
+	border-right: 10px solid #5ba3e0;
+	background-color: #2586d7;
+	color: #fff;
+}
+
+
+#Content
+{
+	padding-right: 1em;
+	padding-left: 1em;
+	float: right;
+	padding-bottom: 1em;
+	padding-top: 1em;
+}
+
+#Footer
+{
+	border-top: gainsboro 1px solid;
+	padding-left: 1em;
+	font-size: xx-small;
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+	border-bottom: gainsboro 1px solid;
+}
+
+

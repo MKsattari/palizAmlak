@@ -1,0 +1,8 @@
+C:\Users\gholami\Desktop\amlak\Common\bin\Debug\amlak.Common.dll
+C:\Users\gholami\Desktop\amlak\Common\bin\Debug\amlak.Common.pdb
+C:\Users\gholami\Desktop\amlak\Common\bin\Debug\amlak.Common.xml
+C:\Users\gholami\Desktop\amlak\Common\bin\Debug\Rad.AppFramework.dll
+C:\Users\gholami\Desktop\amlak\Common\bin\Debug\Rad.AppFramework.xml
+C:\Users\gholami\Desktop\amlak\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Users\gholami\Desktop\amlak\Common\obj\Debug\amlak.Common.dll
+C:\Users\gholami\Desktop\amlak\Common\obj\Debug\amlak.Common.pdb

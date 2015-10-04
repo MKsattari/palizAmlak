@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="sazehDataSet" targetNamespace="http://tempuri.org/sazehDataSet.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/sazehDataSet.xsd" xmlns:mstns="http://tempuri.org/sazehDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"  xmlns:mscodegen="urn:schemas-microsoft-com:xml-msprop">
+	<xs:element name="sazehDataSet" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="sazeh">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="szh_x005F_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" type="xs:int" minOccurs="1" msdata:Caption="Szh Id" msdata:ReadOnly="true" mscodegen:typedName="szh_id" />
+							<xs:element name="mlk_x005F_id" type="xs:int" minOccurs="0" msdata:Caption="Mlk Id" mscodegen:typedName="mlk_id" />
+							<xs:element name="rsht_x005F_id" type="xs:int" minOccurs="1" msdata:Caption="Rsht Id" mscodegen:typedName="rsht_id" />
+							<xs:element name="modirt_x005F_id" type="xs:int" minOccurs="1" msdata:Caption="Modirt Id" mscodegen:typedName="modirt_id" />
+							<xs:element name="shrstan_x005F_id" type="xs:int" minOccurs="1" msdata:Caption="Shrstan Id" mscodegen:typedName="shrstan_id" />
+							<xs:element name="shobh_x005F_id" type="xs:string" minOccurs="0" msdata:Caption="Shobh Id" mscodegen:typedName="shobh_id" />
+							<xs:element name="fndsion_x005F_noe_x005F_id" type="xs:int" minOccurs="1" msdata:Caption="Fndsion Noe Id" mscodegen:typedName="fndsion_noe_id" />
+							<xs:element name="fndsion_x005F_tozi" type="xs:string" minOccurs="0" msdata:Caption="Fndsion Tozi" mscodegen:typedName="fndsion_tozi" />
+							<xs:element name="sgf_x005F_noe_x005F_id" type="xs:int" minOccurs="1" msdata:Caption="Sgf Noe Id" mscodegen:typedName="sgf_noe_id" />
+							<xs:element name="sgf_x005F_sayr" type="xs:string" minOccurs="0" msdata:Caption="Sgf Sayr" mscodegen:typedName="sgf_sayr" />
+							<xs:element name="sgf_x005F_tozi" type="xs:string" minOccurs="0" msdata:Caption="Sgf Tozi" mscodegen:typedName="sgf_tozi" />
+							<xs:element name="sklt_x005F_noe_x005F_id" type="xs:int" minOccurs="1" msdata:Caption="Sklt Noe Id" mscodegen:typedName="sklt_noe_id" />
+							<xs:element name="sklt_x005F_tozi" type="xs:string" minOccurs="0" msdata:Caption="Sklt Tozi" mscodegen:typedName="sklt_tozi" />
+							<xs:element name="sklt_x005F_sayr" type="xs:string" minOccurs="0" msdata:Caption="Sklt Sayr" mscodegen:typedName="sklt_sayr" />
+							<xs:element name="divar_x005F_karji_x005F_glb_x005F_id" type="xs:int" minOccurs="1" msdata:Caption="Divar Karji Glb Id" mscodegen:typedName="divar_karji_glb_id" />
+							<xs:element name="divar_x005F_dakli_x005F_glb_x005F_partition" type="xs:boolean" minOccurs="0" msdata:Caption="Divar Dakli Glb Partition" mscodegen:typedName="divar_dakli_glb_partition" />
+							<xs:element name="divar_x005F_dakli_x005F_glb_x005F_simani" type="xs:boolean" minOccurs="0" msdata:Caption="Divar Dakli Glb Simani" mscodegen:typedName="divar_dakli_glb_simani" />
+							<xs:element name="divar_x005F_dakli_x005F_glb_x005F_lika" type="xs:boolean" minOccurs="0" msdata:Caption="Divar Dakli Glb Lika" mscodegen:typedName="divar_dakli_glb_lika" />
+							<xs:element name="divar_x005F_dakli_x005F_glb_x005F_hblx" type="xs:boolean" minOccurs="0" msdata:Caption="Divar Dakli Glb Hblx" mscodegen:typedName="divar_dakli_glb_hblx" />
+							<xs:element name="divar_x005F_dakli_x005F_glb_x005F_sofali" type="xs:boolean" minOccurs="0" msdata:Caption="Divar Dakli Glb Sofali" mscodegen:typedName="divar_dakli_glb_sofali" />
+							<xs:element name="divar_x005F_dakli_x005F_glb_x005F_poma" type="xs:boolean" minOccurs="0" msdata:Caption="Divar Dakli Glb Poma" mscodegen:typedName="divar_dakli_glb_poma" />
+							<xs:element name="divar_x005F_dakli_x005F_glb_x005F_ajor" type="xs:boolean" minOccurs="0" msdata:Caption="Divar Dakli Glb Ajor" mscodegen:typedName="divar_dakli_glb_ajor" />
+							<xs:element name="divar_x005F_dakli_x005F_glb_x005F_drywall" type="xs:boolean" minOccurs="0" msdata:Caption="Divar Dakli Glb Drywall" mscodegen:typedName="divar_dakli_glb_drywall" />
+							<xs:element name="divar_x005F_dakli_x005F_glb_x005F_sayer" type="xs:boolean" minOccurs="0" msdata:Caption="Divar Dakli Glb Sayer" mscodegen:typedName="divar_dakli_glb_sayer" />
+							<xs:element name="divar_x005F_dakli_x005F_glb_x005F_sayer_x005F_val" type="xs:string" minOccurs="0" msdata:Caption="Divar Dakli Glb Sayer Val" mscodegen:typedName="divar_dakli_glb_sayer_val" />
+							<xs:element name="divar_x005F_dakli_x005F_glb_x005F_tozi" type="xs:int" minOccurs="0" msdata:Caption="Divar Dakli Glb Tozi" mscodegen:typedName="divar_dakli_glb_tozi" />
+							<xs:element name="thvil_x005F_tarikh" type="xs:string" minOccurs="1" msdata:Caption="Thvil Tarikh" mscodegen:typedName="thvil_tarikh" />
+							<xs:element name="thvil_x005F_krshnas" type="xs:int" minOccurs="1" msdata:Caption="Thvil Krshnas" mscodegen:typedName="thvil_krshnas" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:key name="sazehDataSetKey1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:sazeh" />
+			<xs:field xpath="mstns:szh_x005F_id" />
+		</xs:key>
+	</xs:element>
+</xs:schema>
